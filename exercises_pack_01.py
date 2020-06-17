@@ -20,6 +20,11 @@ elif len(name) > 50:
 else:
     print('Name looks good!')
 
-# End
-# End
-# End
+# EX. 3 Simple converter with two options stored in if/else statement:
+
+weight = input("Weight: ")
+weight_type = input ("(L)bs or (K)kg: ")
+if weight_type == 'K':
+    print(int(weight) * 2.20)
+else:
+    print(int(weight) * 0.453592)
