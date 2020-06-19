@@ -52,6 +52,7 @@ else:
         else:
             print('Invalid distance measure')
 
+
 # EX. 5 Guess the number game - version 1 (random-generated number):
 
 import random
@@ -73,6 +74,7 @@ if guess == number:
 else:
     print ('Nope. The number I was thinking of was {0}'.format(number))
 
+
 # EX. 6 Guess the number game - version 2 (non-random generated number):
 
 secret_number = 9
@@ -86,3 +88,22 @@ while guess_limit > guess_count:
         break
 else:
     print("Sorry you failed!")
+
+
+# EX. 7 Guess the number game - version 3 (random-generated number):
+
+import random
+number = random.randint(1, 20)
+guess_made = 0
+while guess_made < 6:
+    guess = int(input("Guess: "))
+    guess_made += 1
+    if guess < number:
+        print ("Your number is too low")
+    if guess > number:
+        print ("Your number is too high")
+    if guess == number:
+        print("You won! You guessed my number in {0} guesses!".format(guess_made))
+        break
+else:
+    print("Sorry you failed! The number I was thinking was {0}".format(number))
