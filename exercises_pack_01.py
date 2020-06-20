@@ -134,3 +134,21 @@ while command != "quit":
             print("Car stopped.")
     elif command != "quit":
         print("I don't understand that...")
+
+
+# EX. 9 Emoji Converter as a function and example on how to call it back
+
+def emoji_converter(message):
+    words = message.split(" ")
+    emojis = {
+        ":)": "😀",
+        ":(": "😕"
+    }
+    output = ""
+    for word in words:
+        output += emojis.get(word, word) + " "
+    return output
+
+
+message = input(f'> ')
+print(emoji_converter(message))
