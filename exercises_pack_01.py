@@ -152,3 +152,17 @@ def emoji_converter(message):
 
 message = input(f'> ')
 print(emoji_converter(message))
+
+
+# EX. 10 Age input with exceptions for strings and 0 which does not exit until age input is not > 0
+
+age = 0
+while age == 0:
+    try:
+        age = int(input('Age: '))
+        zero_check = 1 / age
+        print(age)
+    except ZeroDivisionError:
+        print('Age cannot be 0, try again')
+    except ValueError:
+        print('Invalid value, try again')
