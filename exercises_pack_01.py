@@ -107,3 +107,30 @@ while guess_made < 6:
         break
 else:
     print("Sorry you failed! The number I was thinking was {0}".format(number))
+
+
+# EX. 8 Car game with comands, feedback, help menu and quit option
+
+command = ""
+started = False
+help = '''start - to start the car
+stop - to stop the car
+quit - to exit'''
+while command != "quit":
+    command = input("> ").lower()
+    if command == "help":
+        print(help)
+    elif command == "start":
+        if started:
+            print("The car has already started")
+        else:
+            started = True
+            print("Car stared...Ready to go!")
+    elif command == "stop":
+        if not started:
+            print("The car has already stopped")
+        else:
+            started = False
+            print("Car stopped.")
+    elif command != "quit":
+        print("I don't understand that...")
