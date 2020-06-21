@@ -166,3 +166,21 @@ while age == 0:
         print('Age cannot be 0, try again')
     except ValueError:
         print('Invalid value, try again')
+
+
+# EX. 11 Factorial calculator with checks for negative and 0 + loop for non-numeric inputs
+
+number =''
+while not number.isnumeric():
+    number = input('Please input the number:')
+    if number.isnumeric():
+        num = int(number)
+        if num == 0:
+            print('0! factorial is 1')
+        else:
+            fact = 1
+            for i in range(1, num + 1):
+                fact = fact * i
+            print(number + '! factorial is', str(fact))
+    else:
+        print('Not an integer number')
