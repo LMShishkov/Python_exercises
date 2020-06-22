@@ -384,3 +384,21 @@ while not finished:
     finished = check_if_user_has_finished()
 
 print('Bye')
+
+# EX. 14 Program that determines if a given number is a Prime Number or not
+
+def is_prime(n, i=2):
+    # Base cases
+    if n <= 2:
+        return True if (n == 2) else False
+    if n % i == 0:
+        return False
+    if i * i > n:
+        return True
+
+    # Check for next divisor
+    return is_prime(n, i + 1)
+
+
+print('is_prime(9):', is_prime(9))
+
