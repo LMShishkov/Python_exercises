@@ -402,3 +402,25 @@ def is_prime(n, i=2):
 
 print('is_prime(9):', is_prime(9))
 
+
+# EX. 15 Currency converter with Curried Function
+
+def convert(x, y):
+    return x * y
+
+
+def curry(funct, num):
+    return lambda y: funct(num, y)
+
+
+dollars_to_sterling = curry(convert, 0.77)
+print(dollars_to_sterling(5))
+
+euro_to_sterling = curry(convert, 0.88)
+print(euro_to_sterling(15))
+
+sterling_to_dollars = curry(convert, 1.3)
+print(sterling_to_dollars(7))
+
+sterling_to_euro = curry(convert, 1.14)
+print(sterling_to_euro(9))
