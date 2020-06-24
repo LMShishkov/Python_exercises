@@ -464,3 +464,18 @@ def get_biggest_number(*args):
 
 
 print("The oldest dog is {} years old.".format(get_biggest_number(rex.age, rocky.age, mark.age)))
+
+
+# EX. 17 Sets exercise to make difference comparisons between two groups of students
+
+exam = {'Andrew', 'Kirsty', 'Beth', 'Emily', 'Sue'}
+project = {'Kirsty', 'Emily', 'Ian', 'Stuart'}
+
+print('exam:', exam)
+print('project:', project)
+
+print('Students who took both the exam and submitted a project:', exam & project)
+print('Students who only took the exam:', exam - project)
+print('Students who only submitted the project:', project - exam)
+print('Students who took either (or both) of the exam and the project:', exam | project)
+print('Students who took either (but not both) of the exam and the project:', exam ^ project)
