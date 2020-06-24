@@ -446,3 +446,21 @@ def get_biggest_number(*dogs):
     return f'The oldest dog is {oldest_dog} years old'
 
 print(get_biggest_number(rex.age, rocky.age, mark.age))
+
+# alternative solution
+
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+rex = Dog('Rex', 2)
+rocky = Dog('Rocky', 45)
+mark = Dog('Mark', 14)
+
+def get_biggest_number(*args):
+    return max(args)
+
+
+print("The oldest dog is {} years old.".format(get_biggest_number(rex.age, rocky.age, mark.age)))
