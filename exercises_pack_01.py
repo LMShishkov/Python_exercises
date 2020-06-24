@@ -424,3 +424,25 @@ print(sterling_to_dollars(7))
 
 sterling_to_euro = curry(convert, 1.14)
 print(sterling_to_euro(9))
+
+# EX. 16 Create object of dogs and write a function which determines which is the oldest accessing their age argments -
+# two options (1) with a for loop and (2) with a max function
+
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+rex = Dog('Rex', 2)
+rocky = Dog('Rocky', 45)
+mark = Dog('Mark', 14)
+
+def get_biggest_number(*dogs):
+    oldest_dog = 0
+    for dog in dogs:
+        if oldest_dog < dog:
+            oldest_dog = dog
+    return f'The oldest dog is {oldest_dog} years old'
+
+print(get_biggest_number(rex.age, rocky.age, mark.age))
