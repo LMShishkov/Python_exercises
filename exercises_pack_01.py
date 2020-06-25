@@ -479,3 +479,19 @@ print('Students who only took the exam:', exam - project)
 print('Students who only submitted the project:', project - exam)
 print('Students who took either (or both) of the exam and the project:', exam | project)
 print('Students who took either (but not both) of the exam and the project:', exam ^ project)
+
+
+# EX. 18 In consists of input prompt together with a dictionary type Counter, example of how this dictionary is
+# accessed based on keys through c['cat'] and ordered dictionary based on the input of each word in the text
+
+import collections
+from collections import OrderedDict
+
+user_input = input('Input text: ')
+split_input = user_input.split()
+print(collections.Counter(split_input))
+
+c = collections.Counter(split_input)
+print(c['cat'])
+ordered_dict = OrderedDict(c)
+print(ordered_dict)
