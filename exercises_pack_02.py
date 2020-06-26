@@ -1,3 +1,6 @@
+# EX. 1 Bank account class and object with instance methods and class-side method which counts the number a class
+# instance has been created
+
 class Account:
     instance_count = 0
 
