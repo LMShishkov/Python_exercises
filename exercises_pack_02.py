@@ -731,3 +731,154 @@ with accounts.CurrentAccount ('891', 'Adam', 5.0, -50.0) as acc:
     acc.withdraw(12.33)
     print(acc.open_balance)
 
+
+# EX. 6 Version with List of transaction history record
+
+# Package 'fintech' / module 'accounts'
+
+"""This is the accounts module from the fintech package"""
+
+class AmountError(Exception):
+    '''Amount deposited or deposited must be bigger than 0'''
+    def __init__(self, account, message):
+        self.account = account
+        self.message = message
+
+    def __str__(self):
+        return 'AmountError (' + self.message + ') on ' + str(self.account)
+
+
+class BalanceError(Exception):
+    '''Overdraft limit handling error'''
+
+    def __str__(self):
+        return 'Overdraft limit exceeded, operation cannot be executed'
+
+
+class Transaction:
+    """ A Class used to represent an individual Transaction """
+    def __init__(self, action, amount):
+        self.action = action
+        self.amount = amount
+
+    def __str__(self):
+        return 'Transaction[' + self.action + ': ' + str(self.amount) + ']'
+
+
+class Account:
+    instance_count = 0
+
+    @classmethod
+    def increment_instance_count(cls):
+        cls.instance_count += 1
+        print('A new instance has been created')
+
+    def __init__(self, acc_number, acc_holder, open_balance):
+        Account.increment_instance_count()
+        self.acc_number = acc_number
+        self.acc_holder = acc_holder
+        self._open_balance = open_balance
+        # Note need to initialise the history list before you try to add a Transaction
+        self.history = []
+        self._add_deposit_transaction(open_balance)
+
+    def __iter__(self):
+        return iter(self.history)
+
+    # Provide internal support for adding transactions
+    # Note by convention methods starting with an '_' should not be called
+    # by clients of this class
+    def _add_transaction(self, transaction):
+        self.history.append(transaction)
+
+    # These are convenience methods to make it easier to
+    # record a deposit or withdrawal.
+    def _add_deposit_transaction(self, amount):
+        transaction = Transaction('deposit', amount)
+        self._add_transaction(transaction)
+
+    def _add_withdraw_transaction(self, amount):
+        transaction = Transaction('withdraw', amount)
+        self._add_transaction(transaction)
+
+    @property
+    def open_balance(self):
+        return self._open_balance
+
+    @open_balance.setter
+    def open_balance(self, new_balance):
+        self._open_balance = new_balance
+
+    def deposit(self, amount):
+        if amount <= 0:
+            raise AmountError(account = self, message = 'Cannot deposit negative amounts')
+        else:
+            self.open_balance += amount
+            self._add_deposit_transaction(amount)
+
+    def withdraw(self, amount):
+        if amount <= 0:
+            raise AmountError(account = self, message = 'Cannot deposit negative amounts')
+        else:
+            self.open_balance -= amount
+            self._add_withdraw_transaction(amount)
+
+    def __str__(self):
+        return 'Account[' + str(self.acc_number) + '] - ' + self.acc_holder + ', ' + ' account = ' + str(
+            self.open_balance)
+
+
+class CurrentAccount(Account):
+    def __init__(self, acc_number, acc_holder, open_balance, overdraft_limit):
+        super().__init__(acc_number, acc_holder, open_balance)
+        self.overdraft_limit = overdraft_limit
+
+    def __str__(self):
+        return 'Account[' + str(self.acc_number) + '] - ' + self.acc_holder + ', ' + ', account = ' + str(
+            self.open_balance) + ', overdraft limit = ' + str(self.overdraft_limit)
+
+    def withdraw(self, amount):
+            overdraft_check = self.open_balance - amount
+            if amount <= 0:
+                raise AmountError(account = self, message = 'Cannot deposit negative amounts')
+            elif overdraft_check > self.overdraft_limit:
+                self.open_balance -= amount
+                self._add_withdraw_transaction(amount)
+            else:
+                raise BalanceError
+
+
+class DepositAccount(Account):
+    def __init__(self, acc_number, acc_holder, open_balance, interest_rate):
+        super().__init__(acc_number, acc_holder, open_balance)
+        self.interest_rate = interest_rate
+
+    def interest_rate_apply(self):
+        self.open_balance = self.open_balance + self.open_balance * self.interest_rate
+        return self.open_balance
+
+    def __str__(self):
+        return 'Account[' + str(self.acc_number) + '] - ' + self.acc_holder + ', ' + ', account = ' + str(
+            self.open_balance) + ', interest rate = ' + str(self.interest_rate*100) + '%'
+
+
+class InvestmentAccount(Account):
+    def __init__(self, acc_number, acc_holder, open_balance, investment_type):
+        super().__init__(acc_number, acc_holder, open_balance)
+        self.invetment_type = investment_type
+
+    def __str__(self):
+        return 'Account[' + str(self.acc_number) + '] - ' + self.acc_holder + ', ' + ', account = ' + str(
+            self.open_balance) + ', investment type = ' + self.invetment_type
+
+# Main part (not part of the 'fintech' package
+
+import fintech.accounts as accounts
+
+acc1 = accounts.CurrentAccount('123', 'John', 10.05, -100.0)
+acc1.deposit(23.45)
+acc1.withdraw(12.33)
+
+for transaction in acc1:
+    print(transaction)
+
