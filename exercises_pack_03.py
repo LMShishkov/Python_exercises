@@ -13,7 +13,6 @@ def get_oldest_dog(dogs):
 
 
 class Dog:
-
     species = 'mammal'
 
     def __init__(self, name, age):
@@ -40,7 +39,6 @@ print(get_oldest_dog(dogs))
 # Without using a classmethod count the number of instances and display it.
 
 class Pets:
-
     dogs = []
 
     def __init__(self, dogs):
@@ -48,7 +46,6 @@ class Pets:
 
 
 class Dog:
-
     species = 'mammal'
 
     def __init__(self, name, age):
@@ -60,6 +57,7 @@ class Dog:
 
     def speak(self, sound):
         return "%s says %s" % (self.name, sound)
+
 
 class RussellTerrier(Dog):
     def run(self, speed):
@@ -79,7 +77,6 @@ my_dogs = [
 
 my_pets = Pets(my_dogs)
 
-
 print("I have {} dogs.".format(len(my_pets.dogs)))
 for dog in my_pets.dogs:
     print("{} is {}.".format(dog.name, dog.age))
@@ -93,7 +90,6 @@ print("And they're all {}s, of course.".format(dog.species))
 # dogs are hungry or not.
 
 class Pets:
-
     dogs = []
 
     def __init__(self, dogs):
@@ -101,7 +97,6 @@ class Pets:
 
 
 class Dog:
-
     species = 'mammal'
 
     def __init__(self, name, age):
@@ -152,3 +147,59 @@ if are_my_dogs_hungry:
     print("My dogs are hungry.")
 else:
     print("My dogs are not hungry.")
+
+
+# EX. 4 Add a walk() method to both the Pets and Dog classes so that when you call the method on the Pets class,
+# each dog instance assigned to the Pets class will walk().
+
+class Pets:
+    dogs = []
+
+    def __init__(self, dogs):
+        self.dogs = dogs
+
+    # create a for loop in order to iterate through the list in the class variable with the method in the Dog class
+    def walk(self):
+        for dog in self.dogs:
+            print(dog.walk())
+
+
+class Dog:
+    species = 'mammal'
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.is_hungry = True
+
+    def description(self):
+        return self.name, self.age
+
+    def speak(self, sound):
+        return "%s says %s" % (self.name, sound)
+
+    def eat(self):
+        self.is_hungry = False
+
+    def walk(self):
+        return "%s is walking!" % self.name
+
+
+class RussellTerrier(Dog):
+    def run(self, speed):
+        return "%s runs %s" % (self.name, speed)
+
+
+class Bulldog(Dog):
+    def run(self, speed):
+        return "%s runs %s" % (self.name, speed)
+
+
+my_dogs = [
+    Bulldog("Tom", 6),
+    RussellTerrier("Fletcher", 7),
+    Dog("Larry", 9)
+]
+
+my_pets = Pets(my_dogs)
+my_pets.walk()
