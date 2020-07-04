@@ -1,3 +1,20 @@
+# Exercise 5: Tax and Tip - The program that you create for this exercise will begin by reading the cost of a meal
+# ordered at a restaurant from the user. Then your program will compute the tax and tip for the meal. Use your local
+# tax rate when computing the amount of tax owing. Compute the tip as 18 percent of the meal amount (without the
+# tax). The output from your program should include the tax amount, the tip amount, and the grand total for the meal
+# including both the tax and the tip. Format the output so that all of the values are displayed using two decimal
+# places.
+
+print('This is the Tax & Tip calculator')
+tax_rate = 0.2
+tip_rate = 0.18
+meal_cost = float(input('Please input the cost of your meal: '))
+tax = meal_cost * tax_rate
+tip = meal_cost * tip_rate
+grand_total = meal_cost + tax + tip
+print('Tip = {0:.2f}$ \nTax = {1:.2f}$ \nGrand Total = {2:.2f}$'.format(tip, tax, grand_total))
+
+
 # Exercise 4: Bottle Deposits - In many jurisdictions a small deposit is added to drink containers to encourage
 # people to recycle them. In one particular jurisdiction, drink containers holding one liter or less have a $0.10
 # deposit, and drink containers holding more than one liter have a $0.25 deposit. Write a program that reads the
