@@ -1,3 +1,13 @@
+# Exercise 6: Exercise 6: Sum of the First n Positive Integers - Write a program that reads a positive integer, n,
+# from the user and then displays the sum of all of the integers from 1 to n. The sum of the first n positive
+# integers can be computed using the formula: sum = (n)(n + 1)/2
+
+print('Sum of all integers from 1 to n')
+n = int(input('Supply a positive integer for n: '))
+sum_to_n = (n*(n+1))/2
+print(f'Sum of the First {n} Positive Integers is: {sum_to_n}')
+
+
 # Exercise 5: Tax and Tip - The program that you create for this exercise will begin by reading the cost of a meal
 # ordered at a restaurant from the user. Then your program will compute the tax and tip for the meal. Use your local
 # tax rate when computing the amount of tax owing. Compute the tip as 18 percent of the meal amount (without the
