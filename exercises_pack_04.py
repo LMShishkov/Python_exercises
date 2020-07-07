@@ -1,3 +1,15 @@
+# Exercise 9: Fuel Converter - In the United States, fuel efficiency for vehicles is normally expressed in
+# miles-per-gallon (MPG). In Canada, fuel efficiency is normally expressed in liters-per-hundred kilometers (L/100
+# km). Use your research skills to determine how to convert from MPGto L/100 km. Then create a program that reads a
+# value from the user in American units and displays the equivalent fuel efficiency in Canadian units.
+
+print('The fuel converter')
+fuel_consumption_american = int(input('Please input the fuel consumption in miles-per-gallon (MPG): '))
+ratio = 235.215
+fuel_consumption_canadian = ratio / fuel_consumption_american
+print('Fuel consumption in liters-per-100 kilometers (L/100km): {0:.2f}'.format(fuel_consumption_canadian))
+
+
 # Exercise 8: Compound Interest - Pretend that you have just opened a new savings account that earns 11% interest per
 # year. The interest that you earn is paid at the end of the year, and is added to the balance of the savings
 # account. Write a program that begins by reading the amount of money deposited into the account from the user. Then
@@ -12,7 +24,6 @@ balance_y2_end = balance_y1_end + balance_y1_end * interst_rate
 balance_y3_end = balance_y2_end + balance_y2_end * interst_rate
 print('Balance at the end of Y1 is: {0:.2f}$\nBalance at the end of Y2 is: {1:.2f}$\nBalance at the end of Y3 is: \
 {2:.2f}$ \n'.format(balance_y1_end, balance_y2_end, balance_y3_end))
-
 
 
 # Exercise 7: Widgets and Gizmos - An online retailer sells two products: widgets and gizmos. Each widget
