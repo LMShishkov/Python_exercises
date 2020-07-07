@@ -1,3 +1,20 @@
+# Exercise 8: Compound Interest - Pretend that you have just opened a new savings account that earns 11% interest per
+# year. The interest that you earn is paid at the end of the year, and is added to the balance of the savings
+# account. Write a program that begins by reading the amount of money deposited into the account from the user. Then
+# your program should compute and display the amount in the savings account after 1, 2, and 3 years. Display each
+# amount so that it is rounded to 2 decimal places.
+
+print('The bank account interest-rate calculator')
+initial_balance = int(input('Please supply your initial balance at the beginning of the period: '))
+interst_rate = 0.11
+balance_y1_end = initial_balance + initial_balance * interst_rate
+balance_y2_end = balance_y1_end + balance_y1_end * interst_rate
+balance_y3_end = balance_y2_end + balance_y2_end * interst_rate
+print('Balance at the end of Y1 is: {0:.2f}$\nBalance at the end of Y2 is: {1:.2f}$\nBalance at the end of Y3 is: \
+{2:.2f}$ \n'.format(balance_y1_end, balance_y2_end, balance_y3_end))
+
+
+
 # Exercise 7: Widgets and Gizmos - An online retailer sells two products: widgets and gizmos. Each widget
 # weighs 75 grams. Each gizmo weighs 112 grams. Write a program that reads the number of widgets and the number of
 # gizmos in an order from the user. Then your program should compute and display the total weight of the order.
