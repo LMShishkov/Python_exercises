@@ -1,3 +1,13 @@
+# Exercise 11: Height Units - Many people think about their height in feet and inches, even in some countries that
+# primarily use the metric system. Write a program that reads a number of feet from the user, followed by a number of
+# inches. Once these values are read, your program should compute and display the equivalent number of centimeters.
+
+print('The height units converter')
+feet, inches = input('Please enter your height feet and inches: ').split()
+centimeters = (int(feet) * 12 + int(inches)) * 2.54
+print(f'Your height is {centimeters} centimeters')
+
+
 # Exercise 10: Making Change - Consider the software that runs on a self-checkout machine. One task that it must be
 # able to perform is to determine how much change to provide when the shopper pays for a purchase with cash. Write a
 # program that begins by reading a number of cents from the user as an integer. Then your program should compute and
