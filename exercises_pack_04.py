@@ -1,3 +1,17 @@
+# Exercise 13: Area and Volume - Write a program that begins by reading a radius, r , from the user. The program will
+# continue by computing and displaying the area of a circle with radius r and the volume of a sphere with radius r .
+# Use the pi constant in the math module in your calculations. Hint: The area of a circle is computed using the
+# formula area = πr^2. The volume of a sphere is computed using the formula volume = 4/3*πr^3
+
+import math
+print('The circle area and sphere volume calculator')
+radius = int(input('Please input the radius in centimeters: '))
+circle_area = math.pi * (radius ** 2)
+sphere_volume = 4 * (math.pi * (radius ** 3)) / 3
+print(f'The circle area with radius {radius} is:', ' {0:.2f}'.format(circle_area), ' square centimeters')
+print(f'The sphere volume with radius {radius} is:', ' {0:.2f}'.format(sphere_volume), 'cubic centimeters')
+
+
 # Exercise 12: Distance Units - In this exercise, you will create a program that begins by reading a measurement in
 # feet from the user. Then your program should display the equivalent distance in inches, yards and miles. Use the
 # Internet to look up the necessary conversion factors if you don’t have them memorized.
