@@ -1,3 +1,17 @@
+# Exercise 12: Distance Units - In this exercise, you will create a program that begins by reading a measurement in
+# feet from the user. Then your program should display the equivalent distance in inches, yards and miles. Use the
+# Internet to look up the necessary conversion factors if you don’t have them memorized.
+
+print('The feet distance converter')
+feet = input('Please input the distance in feet: ')
+inches_equivalent = int(feet) * 12
+yards_equivalent = int(feet) * 0.333
+miles_equivalent = int(feet) * 0.000189394
+print('The equivalent of ', feet, ' in inches is: {0:.2f}'.format(inches_equivalent))
+print('The equivalent of ', feet, ' in yards is: {0:.2f}'.format(yards_equivalent))
+print('The equivalent of ', feet, ' in miles is: {0:.2f}'.format(miles_equivalent))
+
+
 # Exercise 11: Height Units - Many people think about their height in feet and inches, even in some countries that
 # primarily use the metric system. Write a program that reads a number of feet from the user, followed by a number of
 # inches. Once these values are read, your program should compute and display the equivalent number of centimeters.
