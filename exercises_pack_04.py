@@ -1,3 +1,16 @@
+# Exercise 14: Sort 3 Integers - Create a program that reads three integers from the user and displays them in sorted
+# order (from smallest to largest). Use the min and max functions to find the smallest and largest values. The middle
+# value can be found by computing the sum of all three values, and then subtracting the minimum value and the maximum
+# value.
+
+print('The 3 integers sorter')
+a, b, c = map(int, input('Input 3 random integers: ').split())
+biggest = max(a, b, c)
+smallest = min(a, b, c)
+middle = a + b + c - biggest - smallest
+print(smallest, middle, biggest)
+
+
 # Exercise 13: Area and Volume - Write a program that begins by reading a radius, r , from the user. The program will
 # continue by computing and displaying the area of a circle with radius r and the volume of a sphere with radius r .
 # Use the pi constant in the math module in your calculations. Hint: The area of a circle is computed using the
