@@ -1,3 +1,22 @@
+# Exercise 15: Day Old Bread - A bakery sells loaves of bread for $3.49 each. Day old bread is discounted by 60 percent.
+# Write a program that begins by reading the number of loaves of day old bread being purchased from the user. Then your
+# program should display the regular price for the bread, the discount because it is a day old, and the total price.
+# All of the values should be displayed using two decimal places, and the decimal points in all of the numbers should
+# be aligned when reasonable values are entered by the user.
+
+print('The day-old bread discount calculator')
+old_bread_loaves = int(input('Please input the number of day-old loaves being purchased: '))
+price_std = 3.49
+discount_rate = 0.6
+price_disc = price_std * discount_rate
+total_std = old_bread_loaves * price_std
+total_disc = old_bread_loaves * price_disc
+discount = total_std - total_disc
+print(f'Total regular price for {old_bread_loaves} bread: ', '{0:50.2f}'.format(total_std), '$')
+print(f'Total discount for {old_bread_loaves} bread: ', '     {0:50.2f}'.format(discount), '$')
+print(f'Total total price for {old_bread_loaves} bread: ', '  {0:50.2f}'.format(total_disc), '$')
+
+
 # Exercise 14: Sort 3 Integers - Create a program that reads three integers from the user and displays them in sorted
 # order (from smallest to largest). Use the min and max functions to find the smallest and largest values. The middle
 # value can be found by computing the sum of all three values, and then subtracting the minimum value and the maximum
