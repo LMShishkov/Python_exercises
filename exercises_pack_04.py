@@ -1,3 +1,14 @@
+# Exercise 16: Even or Odd? - Write a program that reads an integer from the user. Then your program should display a
+# message indicating whether the integer is even or odd.
+
+print('Number is even - True or False?')
+num = int(input('Please input a number: '))
+num_even = False
+if num % 2 == 0:
+    num_even = True
+print(num_even)
+
+
 # Exercise 15: Day Old Bread - A bakery sells loaves of bread for $3.49 each. Day old bread is discounted by 60 percent.
 # Write a program that begins by reading the number of loaves of day old bread being purchased from the user. Then your
 # program should display the regular price for the bread, the discount because it is a day old, and the total price.
