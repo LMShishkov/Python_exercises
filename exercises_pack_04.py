@@ -1,3 +1,21 @@
+# Exercise 17: Dog Years - It is commonly said that one human year is equivalent to 7 dog years. However this simple
+# conversion fails to recognize that dogs reach adulthood in approximately two years. As a result, some people believe
+# that it is better to count each of the first two human years as 10.5 dog years, and then count each additional human
+# year as 4 dog years.
+
+print('The dog years converter')
+dog_age = int(input('Please enter the age of your dog: '))
+dog_human_age = 0
+if dog_age <= 0:
+    print('Enter a positive number')
+elif 0 < dog_age <= 2:
+    dog_human_age = dog_age * 10.5
+    print(f'Your dog is {dog_human_age}-year old in human years')
+elif dog_age > 2:
+    dog_human_age = 21 + ((dog_age-2)*4)
+    print(f'Your dog is {dog_human_age}-year old in human years')
+
+
 # Exercise 16: Even or Odd? - Write a program that reads an integer from the user. Then your program should display a
 # message indicating whether the integer is even or odd.
 
