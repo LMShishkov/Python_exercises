@@ -1,3 +1,32 @@
+# Exercise 30: Sound Levels - The following table (check notion.so link) lists the sound level in decibels for several
+# common noises. Write a program that reads a sound level in decibels from the user. If the user enters a decibel level
+# that matches one of the noises in the table then your program should display a message containing only that noise. If
+# the user enters a number of decibels between the noises listed then your program should display a message indicating
+# which noises the level is between. Ensure that your program also generates reasonable output for a value smaller than
+# the quietest noise in the table, and for a value larger than the loudest noise in the table.
+
+print('Sound Levels Relation')
+sound_level = int(input('Please enter the Decibel level (dB): '))
+if sound_level > 130:
+    print(f'{sound_level}dBs is louder than a Jackhammer')
+if sound_level == 130:
+    print(f'{sound_level}dBs is as loud as a Jackhammer')
+if 130 > sound_level > 106:
+    print(f'{sound_level}dBs is between a Jackhammer and a Gas lawnmower')
+if sound_level == 106:
+    print(f'{sound_level}dBs is as loud as a Gas lawnmower')
+if 106 > sound_level > 70:
+    print(f'{sound_level}dBs is between a Gas lawnmower and an Alarm clock')
+if sound_level == 70:
+    print(f'{sound_level}dBs is as loud as an Alarm clock')
+if 70 > sound_level > 40:
+    print(f'{sound_level}dBs is between an Alarm clock and a Quiet room')
+if sound_level == 40:
+    print(f'{sound_level}dBs is as loud as a Quiet room')
+if 40 > sound_level:
+    print(f'{sound_level}dBs is not louder than a Quiet room')
+
+
 # Exercise 20: Month Name to Number of Days - The length of a month varies from 28 to 31 days. In this exercise you will
 # create a program that reads the name of a month from the user as a string. Then your # program should display the
 # number of days in that month. Display “28 or 29 days” for February so that leap years are addressed.
