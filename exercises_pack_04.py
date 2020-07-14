@@ -1,3 +1,18 @@
+# Exercise 20: Month Name to Number of Days - The length of a month varies from 28 to 31 days. In this exercise you will
+# create a program that reads the name of a month from the user as a string. Then your # program should display the
+# number of days in that month. Display “28 or 29 days” for February so that leap years are addressed.
+
+print('Month Name to Number of Days')
+month_name = input('Please enter the full name of the month: ')
+days = 31
+short_months = ['April', 'June', 'September', 'November']
+if month_name in short_months:
+    days = 30
+elif month_name == 'February':
+    days = '28 or 29 days'
+print(f'{month_name} has {days}')
+
+
 # Exercise 19: Name that Shape - Write a program that determines the name of a shape from its number of sides. Read the
 # number of sides from the user and then report the appropriate name as part of a meaningful message. Your program
 # should support shapes with anywhere from 3 up to (and including) 10 sides. If a number of sides outside of this range
@@ -44,7 +59,7 @@ elif letter == 'y':
     print(f'"{letter}" is sometimes vowel and sometimes consonant')
 else:
     print(f'"{letter}" is a consonant')
-    
+
 
 # Exercise 17: Dog Years - It is commonly said that one human year is equivalent to 7 dog years. However this simple
 # conversion fails to recognize that dogs reach adulthood in approximately two years. As a result, some people believe
