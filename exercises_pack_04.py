@@ -1,3 +1,34 @@
+# Exercise 19: Name that Shape - Write a program that determines the name of a shape from its number of sides. Read the
+# number of sides from the user and then report the appropriate name as part of a meaningful message. Your program
+# should support shapes with anywhere from 3 up to (and including) 10 sides. If a number of sides outside of this range
+# is entered then your program should display an appropriate error message.
+
+print('Name that shape')
+nsides = int(input('Enter the number of sides: '))
+name = ''
+if nsides == 3:
+    name = 'triangle'
+if nsides == 4:
+    name = 'quadrilateral'
+if nsides == 5:
+    name = 'pentagon'
+if nsides == 6:
+    name = 'hexagon'
+if nsides == 7:
+    name = 'heptagon'
+if nsides == 8:
+    name = 'octagon'
+if nsides == 9:
+    name = 'nonagon'
+if nsides == 10:
+    name = 'decagon'
+
+if name == '':
+    print(f'{nsides} side(s) are not supported by this program')
+else:
+    print(f'That is a {name}!')
+
+
 # Exercise 18:  Vowel or Consonant - In this exercise you will create a program that reads a letter of the alphabet from
 # the user. If the user enters a, e, i, o or u then your program should display a message indicating that the entered
 # letter is a vowel. If the user enters y then your program should display a message indicating that sometimes y is a
@@ -13,6 +44,7 @@ elif letter == 'y':
     print(f'"{letter}" is sometimes vowel and sometimes consonant')
 else:
     print(f'"{letter}" is a consonant')
+    
 
 # Exercise 17: Dog Years - It is commonly said that one human year is equivalent to 7 dog years. However this simple
 # conversion fails to recognize that dogs reach adulthood in approximately two years. As a result, some people believe
