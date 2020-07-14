@@ -1,3 +1,19 @@
+# Exercise 18:  Vowel or Consonant - In this exercise you will create a program that reads a letter of the alphabet from
+# the user. If the user enters a, e, i, o or u then your program should display a message indicating that the entered
+# letter is a vowel. If the user enters y then your program should display a message indicating that sometimes y is a
+# vowel, and sometimes y is a consonant. Otherwise your program should display a message indicating that the letter is a
+# consonant.
+
+print('The vowel or consonant checker')
+letter = input('Please input a letter to check: ')
+vowels = ['a', 'e', 'i', 'o', 'u']
+if letter in vowels:
+    print(f'"{letter}" is a vowel')
+elif letter == 'y':
+    print(f'"{letter}" is sometimes vowel and sometimes consonant')
+else:
+    print(f'"{letter}" is a consonant')
+
 # Exercise 17: Dog Years - It is commonly said that one human year is equivalent to 7 dog years. However this simple
 # conversion fails to recognize that dogs reach adulthood in approximately two years. As a result, some people believe
 # that it is better to count each of the first two human years as 10.5 dog years, and then count each additional human
