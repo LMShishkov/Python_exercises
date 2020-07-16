@@ -1,3 +1,22 @@
+# Exercise 33 (alternative solution)
+
+print('What Color is that square on the Chess Board?')
+square_coordinates = input('Please enter the Chess Board square coordinates: ')
+first_char = square_coordinates[0]
+second_char = square_coordinates[1]
+int_second_char = int(second_char)
+columns_starting_black = ['a', 'c', 'e', 'g']
+if first_char in columns_starting_black:
+    if int_second_char % 2 == 0:
+        print(f'{square_coordinates} is a white square')
+    else:
+        print(f'{square_coordinates} is a black square ')
+else:
+    if int_second_char % 2 == 0:
+        print(f'{square_coordinates} is a black square')
+    else:
+        print(f'{square_coordinates} is a white square ')
+
 # Exercise 33: What Color is that Square? - Positions on a chess board are identified by a letter and a number. The
 # letter identifies the column, while the number identifies the row, as shown in the picture.  Write a program that
 # reads a position from the user. Use an if statement to determine if the column begins with a black square or a white
@@ -21,7 +40,7 @@ else:
         print(f'{square_coordinates} is a black square')
     else:
         print(f'{square_coordinates} is a white square ')
-        
+
 # Exercise 32: Date to Holiday Name - Canada has three national holidays which fall on the same dates each year. Write a
 # program that reads a month and day from the user (check notion.so link for table with dates). If the month and day
 # match one of the holidays listed previously then your program should display the holiday’s name. Otherwise your
