@@ -1,3 +1,19 @@
+# Exercise 32: Date to Holiday Name - Canada has three national holidays which fall on the same dates each year. Write a
+# program that reads a month and day from the user (check notion.so link for table with dates). If the month and day
+# match one of the holidays listed previously then your program should display the holiday’s name. Otherwise your
+# program should indicate that the entered month and day do not correspond to a fixed-date holiday.
+
+print('Date to Holiday Name in Canada')
+month, day = input('Enter the full month name and day to check for a holiday: ').split()
+if month == 'January' and day == '1':
+    print(f'{month} {day} is New year’s day')
+elif month == 'July' and day == '1':
+    print(f'{month} {day} is Canada day day')
+elif month == 'December' and day == '25':
+    print(f'{month} {day} is Christmas day day')
+else:
+    print('The entered month and day does not correspond to a fixed-date holiday')
+
 # Exercise 31: Name that Triangle - A triangle can be classified based on the lengths of its sides as equilateral,
 # isosceles or scalene. All 3 sides of an equilateral triangle have the same length. An isosceles triangle has two sides
 # that are the same length, and a third side that is a different length. If all of the sides have different lengths then
