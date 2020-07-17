@@ -1,3 +1,43 @@
+# Exercise 34 Season from Month and Day - The year is divided into four seasons: spring, summer, fall and winter.
+# While the exact dates that the seasons change vary a little bit from year to year because of the way that the calendar
+# is constructed, we will use the dates in the chart. Create a program that reads a month and day from the user. The
+# user will enter the name of the month as a string, followed by the day within the month as an integer. Then your
+# program should display the season associated with the date that was entered.
+
+print('What is the season on this date?')
+month, day = input('Please input the full month name and day: ').split()
+day = int(day)
+season = ''
+if month == 'January' or month == 'February':
+    season = 'winter'
+elif month == 'March':
+    if day < 20:
+        season = 'winter'
+    else:
+        season = 'spring'
+elif month == 'April' or month == 'May':
+    season = 'spring'
+elif month == 'June':
+    if day < 21:
+        season = 'spring'
+    else:
+        season = 'summer'
+elif month == 'July' or month == 'August':
+    season = 'summer'
+elif month == 'September':
+    if day < 22:
+        season = 'summer'
+    else:
+        season = 'autumn'
+elif month == 'October' or month == 'November':
+    season = 'autumn'
+elif month == 'December':
+    if day < 21:
+        season = 'autumn'
+    else:
+        season = 'winter'
+print(f'{month} {day} is in {season}')
+
 # Exercise 33 (alternative solution)
 
 print('What Color is that square on the Chess Board?')
