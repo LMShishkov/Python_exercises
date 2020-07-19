@@ -1,3 +1,37 @@
+# Exercise 35: Chinese Zodiac - The Chinese zodiac assigns animals to years in a 12 year cycle. One 12 year cycle is
+# shown in the table (check notion.so link for table with dates). The pattern repeats from there, with 2012 being
+# another year of the dragon, and 1999 being another year of the hare. Write a program that reads a year from the user
+# and displays the animal associated with that year. Your program should work correctly for any year greater than or
+# equal to zero, not just the ones listed in the table.
+
+print('Perpetual Chinese Zodiac')
+year_of_birth = int(input('Please input the year of birth: '))
+zodiac_sign = 'Dragon'
+if year_of_birth % 12 == 9:
+    zodiac_sign = 'Snake'
+elif year_of_birth % 12 == 10:
+    zodiac_sign = 'Horse'
+elif year_of_birth % 12 == 11:
+    zodiac_sign = 'Sheep'
+elif year_of_birth % 12 == 0:
+    zodiac_sign = 'Monkey'
+elif year_of_birth % 12 == 1:
+    zodiac_sign = 'Rooster'
+elif year_of_birth % 12 == 2:
+    zodiac_sign = 'Dog'
+elif year_of_birth % 12 == 3:
+    zodiac_sign = 'Pig'
+elif year_of_birth % 12 == 4:
+    zodiac_sign = 'Rat'
+elif year_of_birth % 12 == 5:
+    zodiac_sign = 'Ox'
+elif year_of_birth % 12 == 6:
+    zodiac_sign = 'Tiger'
+elif year_of_birth % 12 == 7:
+    zodiac_sign = 'Hare'
+print(f'{year_of_birth} is the year of {zodiac_sign}')
+
+
 # Exercise 34 Season from Month and Day - The year is divided into four seasons: spring, summer, fall and winter.
 # While the exact dates that the seasons change vary a little bit from year to year because of the way that the calendar
 # is constructed, we will use the dates in the chart. Create a program that reads a month and day from the user. The
