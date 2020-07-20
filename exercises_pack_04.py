@@ -1,6 +1,6 @@
 # Exercise 38: Wavelengths of Visible Light - The wavelength of visible light ranges from 380 to 750 nanometers (nm).
 # While the spectrum is continuous, it is often divided into 6 colors as shown in the chart (check notion.so link for
-# chart). Write a program that reads awavelength from the user and reports its color. Display an appropriate error
+# chart). Write a program that reads a wave length from the user and reports its color. Display an appropriate error
 # message if the wavelength entered by the user is outside of the visible spectrum.
 
 print('Wavelength to color transformator')
@@ -25,7 +25,7 @@ elif 620 <= wave_len < 750:
 
 if error_message is False:
     print(f'Wave with length of {wave_len} nm is in the {color} spectrum')
-    
+
 
 # Exercise 37: Assessing Employees - At a particular company, employees are rated at the end of each year. The rating
 # scale begins at 0.0, with higher values indicating better performance and resulting in larger raises. The value
