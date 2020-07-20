@@ -1,3 +1,27 @@
+# Exercise 37: Assessing Employees - At a particular company, employees are rated at the end of each year. The rating
+# scale begins at 0.0, with higher values indicating better performance and resulting in larger raises. The value
+# awarded to an employee is either 0.0, 0.4, or 0.6 or more. Values between 0.0 and 0.4, and between 0.4 and 0.6 are
+# never used. The meaning associated with each rating is shown in the following table. The amount of an employee’s raise
+# is $2400.00 multiplied by their rating. Write a program that reads a rating from the user and indicates whether the
+# performance was unacceptable, acceptable or meritorious. The amount of the employee’s raise should also be reported.
+# Your program should display an appropriate error message if an invalid rating is entered.
+
+print('Employee Assessment and Bonus Program')
+emp_rating = float(input('Please input the employee rating: '))
+emp_raise_usd = 2400
+emp_raise = 0
+if emp_rating == 0.0:
+    print(f'Employee rating of {emp_rating} means unacceptable performance and {emp_raise}$ raise')
+elif emp_rating == 0.4:
+    emp_raise = emp_rating * emp_raise_usd
+    print(f'Employee rating of {emp_rating} means acceptable performance and {emp_raise}$ raise')
+elif emp_rating >= 0.6:
+    emp_raise = emp_rating * emp_raise_usd
+    print(f'Employee rating of {emp_rating} means meritorious performance and {emp_raise}$ raise')
+elif 0 < emp_rating < 0.4 or 0.4 < emp_rating < 0.6:
+    print(f'{emp_rating} is invalid')
+
+
 # Exercise 36: Letter Grade to Grade Points - At a particular university, letter grades are mapped to grade points as
 # shown in the chart (check notion.so link for table). Write a program that begins by reading a letter grade from the
 # user. Then your program should compute and display the equivalent number of grade points. Ensure that your program
