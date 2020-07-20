@@ -1,3 +1,54 @@
+# Exercise 36: Letter Grade to Grade Points - At a particular university, letter grades are mapped to grade points as
+# shown in the chart (check notion.so link for table). Write a program that begins by reading a letter grade from the
+# user. Then your program should compute and display the equivalent number of grade points. Ensure that your program
+# generates an appropriate error message if the user enters an invalid letter grade.
+
+print('Letter Grade to Grade Points')
+grade = input('Please input your letter grade: ')
+grade_point = 0
+a = 4.0
+a_minus = 3.7
+b_plus = 3.3
+b = 3.0
+b_minus = 2.7
+c_plus = 2.3
+c = 2.0
+c_minus = 1.7
+d_plus = 1.3
+d = 1.0
+f = 0
+invalid = -1
+grade = grade.upper()
+if grade == 'A' or grade == 'A+':
+    grade_point = a
+elif grade == 'A-':
+    grade_point = a_minus
+elif grade == 'B+':
+    grade_point = b_plus
+elif grade == 'B':
+    grade_point = b
+elif grade == 'B-':
+    grade_point = b_minus
+elif grade == 'C+':
+    grade_point = c_plus
+elif grade == 'C':
+    grade_point = c
+elif grade == 'C-':
+    grade_point = c_minus
+elif grade == 'D+':
+    grade_point = d_plus
+elif grade == 'D':
+    grade_point = d
+elif grade == 'F':
+    grade_point = f
+else:
+    grade_point = invalid
+if grade_point != invalid:
+    print(f'{grade} translates to {grade_point} grade points')
+else:
+    print(f'{grade} is an invalid letter grade')
+
+
 # Exercise 35: Chinese Zodiac - The Chinese zodiac assigns animals to years in a 12 year cycle. One 12 year cycle is
 # shown in the table (check notion.so link for table with dates). The pattern repeats from there, with 2012 being
 # another year of the dragon, and 1999 being another year of the hare. Write a program that reads a year from the user
