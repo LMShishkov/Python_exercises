@@ -1,3 +1,37 @@
+#Exercise 39: Exercise 39: Cell Phone Bill - A particular cell phone plan includes 50 minutes of air time and 50 text
+# messages for $15.00 a month. Each additional minute of air time costs $0.25, while additional text messages cost $0.15
+# each. All cell phone bills include an additional charge of $0.44 to support 911 call centers, and the entire bill
+# (including the 911 charge) is subject to 5 percent sales tax. Write a program that reads the number of minutes and
+# text messages used in a month from the user. Display the base charge, additional minutes charge (if any), additional
+# text message charge (if any), the 911 fee, tax and total bill amount. Only display the additional minute and text
+# message charges if the user incurred costs in these categories. Ensure that all of the charges are displayed using
+# 2 decimal places.
+
+print('The cell phone invoicing tool')
+minutes = int(input('Please input the number of minutes and messages used for the given month: '))
+messages = int(input('Please input the number of minutes and messages used for the given month: '))
+print('-'*10)
+base_charge = 15
+print('Base charge: {0:.2f}$'.format(base_charge))
+extra_minutes = 0
+extra_messages = 0
+if minutes > 50:
+    extra_minutes = (minutes - 50) * 0.25
+    print('Extra minutes charge: {0:.2f}$'.format(extra_minutes))
+if messages > 50:
+    extra_messages = (messages - 50) * 0.15
+    print('Extra minutes charge: {0:.2f}$'.format(extra_messages))
+support_charge = 0.44
+print('Additional 911 call centers support charge: {0:.2f}$'.format(support_charge))
+sales_tax_percentage = 0.05
+sales_tax = (base_charge + support_charge + extra_minutes + extra_messages) * sales_tax_percentage
+print('Sales tax 5% charge: {0:.2f}$'.format(sales_tax))
+total_charge = base_charge + support_charge + extra_minutes + extra_messages + sales_tax
+print('='*10)
+print('')
+print('Total charge: {0:.2f}$'.format(total_charge))
+
+
 # Exercise 38: Wavelengths of Visible Light - The wavelength of visible light ranges from 380 to 750 nanometers (nm).
 # While the spectrum is continuous, it is often divided into 6 colors as shown in the chart (check notion.so link for
 # chart). Write a program that reads a wave length from the user and reports its color. Display an appropriate error
