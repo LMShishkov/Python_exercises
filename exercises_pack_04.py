@@ -1,3 +1,25 @@
+# Exercise 40: Is it a Leap Year? Most years have 365 days. However, the time required for the Earth to orbit the Sun is
+# actually slightly more than that. As a result, an extra day, February 29, is included in some years to correct for
+# this difference. Such years are referred to as leap years. The rules for determining whether or not a year is a leap
+# year follow:
+# - Any year that is divisible by 400 is a leap year
+# - Of the remaining years, any year that is divisible by 100 is not a leap year
+# - Of the remaining years, any year that is divisible by 4 is a leap year
+# - All other years are not leap years
+# Write a program that reads a year from the user and displays a message indicating whether or not it is a leap year.
+
+print('Is it a leap year?')
+year = int(input('Please state the year which you would like to check: '))
+if year % 400 == 0:
+    print(f'{year} is a leap year')
+elif year % 100 == 0:
+    print(f'{year} is not a leap year')
+elif year % 4 == 0:
+    print(f'{year} is a leap year')
+else:
+    print(f'{year} is not a leap year')
+
+
 #Exercise 39: Exercise 39: Cell Phone Bill - A particular cell phone plan includes 50 minutes of air time and 50 text
 # messages for $15.00 a month. Each additional minute of air time costs $0.25, while additional text messages cost $0.15
 # each. All cell phone bills include an additional charge of $0.44 to support 911 call centers, and the entire bill
