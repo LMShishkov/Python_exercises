@@ -1,3 +1,50 @@
+# Exercise 41: Exercise 41: Next Day - Write a program that reads a date from the user and computes its immediate
+# successor. For example, if the user enters values that represent 2013-11-18 then your program should display a message
+# indicating that the day immediately after 2013-11-18 is 2013-11-19. If the user enters values that represent
+# 2013-11-30 then the program should indicate that the next day is 2013-12-01. If the user enters values that represent
+# 2013-12-31 then the program should indicate that the next day is 2014-01-01. The date will be entered in numeric form
+# with three separate input statements; one for the year, one for the month, and one for the day. Ensure that your
+# program works correctly for leap years.
+
+print('Next day calendar')
+year = int(input('Please select a year: '))
+month = int(input('Please select a month: '))
+day = int(input('Please select a day: '))
+
+leap_year = False
+if year % 400 == 0:
+    leap_year = True
+elif year % 100 == 0:
+    leap_year = False
+elif year % 4 == 0:
+    leap_year = True
+else:
+    leap_year = False
+
+next_day = day + 1
+if next_day > 31 and month in [1, 3, 5, 7, 8, 10, 12]:
+    next_day = 1
+elif next_day > 30 and month in [4, 6, 9, 11]:
+    next_day = 1
+elif next_day > 29 and leap_year:
+    next_day = 1
+elif next_day > 28 and not leap_year:
+    next_day = 1
+
+next_month = month
+if next_day == 1:
+    next_month += 1
+if next_month > 12:
+    next_month = 1
+
+next_year = year
+if next_month == 1:
+    next_year += 1
+
+print(f'Current day is: {day} - {month} - {year}')
+print(f'Next day is: {next_day} - {next_month} - {next_year}')
+
+
 # Exercise 40: Is it a Leap Year? Most years have 365 days. However, the time required for the Earth to orbit the Sun is
 # actually slightly more than that. As a result, an extra day, February 29, is included in some years to correct for
 # this difference. Such years are referred to as leap years. The rules for determining whether or not a year is a leap
