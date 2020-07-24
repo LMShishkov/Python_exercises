@@ -1,10 +1,75 @@
-# Exercise 41: Exercise 41: Next Day - Write a program that reads a date from the user and computes its immediate
-# successor. For example, if the user enters values that represent 2013-11-18 then your program should display a message
-# indicating that the day immediately after 2013-11-18 is 2013-11-19. If the user enters values that represent
-# 2013-11-30 then the program should indicate that the next day is 2013-12-01. If the user enters values that represent
-# 2013-12-31 then the program should indicate that the next day is 2014-01-01. The date will be entered in numeric form
-# with three separate input statements; one for the year, one for the month, and one for the day. Ensure that your
-# program works correctly for leap years.
+# Exercise 42: Exercise 42: Roulette Payouts - Aroulette wheel has 38 spaces on it. Of these spaces, 18 are black, 18
+# are red, and two are green. The green spaces are numbered 0 and 00. The red spaces are numbered 1, 3, 5, 7, 9, 12, 14,
+# 16, 18, 19, 21, 23, 25, 27, 30 32, 34 and 36. The remaining integers between 1 and 36 are used to number the black
+# spaces. Many different bets can be placed in roulette.We will only consider the following subset of them in this
+# exercise:
+#
+# - Single number (1 to 36, 0, or 00)
+# - Red versus Black
+# - Odd versus Even (Note that 0 and 00 do not pay out for even)
+# - 1 to 18 versus 19 to 36
+#
+# Write a program that simulates a spin of a roulette wheel by using Python’s random number generator. Display the
+# number that was selected and all of the bets that must be payed. For example, if 13 is selected then your program
+# should display:
+#
+# # The spin resulted in 13...
+# # Pay 13
+# # Pay Black
+# # Pay Odd
+# # Pay 1 to 18
+# If the simulation results in 0 or 00 then your program should display Pay 0 or Pay 00 without any further output.
+
+import random
+
+print('Roulette Payouts')
+random_number = random.randint(0,37)
+even_odd_win = ''
+color_win = ''
+range_win = ''
+
+# define the color win
+red_numbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
+black_numbers = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35]
+if random_number in red_numbers:
+    color_win = 'Red'
+elif random_number in black_numbers:
+    color_win = 'Black'
+else:
+    color_win = 'none - 0 / 00 spin'
+
+# define the even / odd win
+if random_number == 0 or random_number == 37:
+    even_odd_win = 'Odd'
+elif random_number % 2 == 0:
+    even_odd_win = 'Even'
+elif random_number % 2 != 0:
+    even_odd_win = 'Odd'
+
+# define range win
+if random_number in range(1, 18):
+    range_win = '1 to 18'
+elif random_number in range(19, 36):
+    range_win = '19 to 36'
+elif random_number == 0 or random_number == 37:
+    range_win = 'none - 0 / 00 spin'
+
+if random_number == 37:
+    random_number = '00'
+print(f'The spin resulted in {random_number}...')
+print(f'Pay {random_number}')
+print(f'Pay {color_win}')
+print(f'Pay {even_odd_win}')
+print(f'Pay {range_win}')
+
+
+# Exercise 41: Next Day - Write a program that reads a date from the user and computes its immediate successor. For
+# example, if the user enters values that represent 2013-11-18 then your program should display a message indicating
+# that the day immediately after 2013-11-18 is 2013-11-19. If the user enters values that represent 2013-11-30 then the
+# program should indicate that the next day is 2013-12-01. If the user enters values that represent 2013-12-31 then the
+# program should indicate that the next day is 2014-01-01. The date will be entered in numeric form with three separate
+# input statements; one for the year, one for the month, and one for the day. Ensure that your program works correctly
+# for leap years.
 
 print('Next day calendar')
 year = int(input('Please select a year: '))
