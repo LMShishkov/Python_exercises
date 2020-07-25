@@ -1,3 +1,21 @@
+# Exercise 44: Discount Table - A particular retailer is having a 60 percent off sale on a variety of discontinued
+# products. The retailer would like to help its customers determine the reduced price of the merchandise by having a
+# printed discount table on the shelf that shows the original prices and the prices after the discount has been applied.
+# Write a program that uses a loop to generate this table, showing the original price, the discount amount, and the new
+# price for purchases of $4.95, $9.95, $14.95, $19.95 and $24.95. Ensure that the discount amounts and the new prices
+# are rounded to 2 decimal places when they are displayed.
+
+print('The discount table display')
+prices = input('Please enter a collection of prices to discount: ').split()
+discount = input('Please enter the discount % which you want to apply: ')
+discount = int(discount)
+prices = list(map(float, prices))
+
+for price in prices:
+    print('Original price: {0:.2f}$ | Discount: {1:.2f}$ | New price: {2:.2f}$'.format(price, (price*discount)/100,
+    (price-(price*discount)/100)))
+    
+
 # Exercise 43: Average - In this exercise you will create a program that computes the average of a collection of values
 # entered by the user. The user will enter 0 as a sentinel value to indicate that no further values will be provided.
 # Because the 0 marks the end of the input it should not be included in the average.
