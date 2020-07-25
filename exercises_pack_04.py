@@ -1,3 +1,18 @@
+# Exercise 43: Average - In this exercise you will create a program that computes the average of a collection of values
+# entered by the user. The user will enter 0 as a sentinel value to indicate that no further values will be provided.
+# Because the 0 marks the end of the input it should not be included in the average.
+
+print('The average calculator')
+average_list = input('Please enter a collection of scores without comma to compute the average: ').split()
+average_list = list(map(int, average_list))
+total = 0
+length = len(a)
+for i in a:
+    total += i
+average = total / (length-1)
+print(average)
+
+
 # Exercise 42: Exercise 42: Roulette Payouts - Aroulette wheel has 38 spaces on it. Of these spaces, 18 are black, 18
 # are red, and two are green. The green spaces are numbered 0 and 00. The red spaces are numbered 1, 3, 5, 7, 9, 12, 14,
 # 16, 18, 19, 21, 23, 25, 27, 30 32, 34 and 36. The remaining integers between 1 and 36 are used to number the black
