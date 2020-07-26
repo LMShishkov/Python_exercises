@@ -1,3 +1,14 @@
+# Exercise 45: Temperature Conversion Table - Write a program that displays a temperature conversion table for degrees
+# Celsius and degrees Fahrenheit. The table should include rows for all temperatures between 0 and 100 degrees Celsius
+# that are multiples of 10 degrees Celsius. Include appropriate headings on your columns. The formula for converting
+# between degrees Celsius and degrees Fahrenheit can be found on the internet.
+
+print('Temperature conversion table')
+temperature_c = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+for i in temperature_c:
+    print('Temperature in Celsius: {0:.2f} = {1:.2f} Fahrenheit'.format(i, (i*9)/5 + 32))
+
+
 # Exercise 44: Discount Table - A particular retailer is having a 60 percent off sale on a variety of discontinued
 # products. The retailer would like to help its customers determine the reduced price of the merchandise by having a
 # printed discount table on the shelf that shows the original prices and the prices after the discount has been applied.
@@ -14,7 +25,7 @@ prices = list(map(float, prices))
 for price in prices:
     print('Original price: {0:.2f}$ | Discount: {1:.2f}$ | New price: {2:.2f}$'.format(price, (price*discount)/100,
     (price-(price*discount)/100)))
-    
+
 
 # Exercise 43: Average - In this exercise you will create a program that computes the average of a collection of values
 # entered by the user. The user will enter 0 as a sentinel value to indicate that no further values will be provided.
