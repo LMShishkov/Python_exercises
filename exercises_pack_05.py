@@ -1,3 +1,45 @@
+# Exercise 6: An ice cream stand is a specific kind of restaurant. Write a class called IceCreamStand that inherits from
+# the Restaurant class in Exercise 3. Add an attribute called flavors that stores a list of ice cream flavors. Write a
+# method that displays these flavors. Create an instance of IceCreamStand, and call this method.
+
+
+class Restaurant():
+
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+
+    def describe_restaurant(self):
+        print(f'{self.restaurant_name} has {self.cuisine_type} cuisine | Number of customers served: '
+              f'{self.number_served}')
+
+    def open_restaurant(self):
+        print(f'{self.restaurant_name} is open!')
+
+    def set_number_served(self, customers):
+        self.number_served = customers
+
+    def increment_number_served(self, additional_customers):
+        self.number_served += additional_customers
+
+
+class IceCreamStand(Restaurant):
+
+    def __init__(self, restaurant_name, cuisine_type, flavor_list):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = flavor_list
+
+    def get_flavors(self):
+        print(f'The flavors offered at {self.restaurant_name} are: {self.flavors}')
+
+
+flavors = ['Chocolate', 'Mind', 'Vanilla']
+restaurant4 = IceCreamStand('Happy Penguin', 'traditional ice-cream', flavors)
+restaurant4.describe_restaurant()
+restaurant4.get_flavors()
+
+
 # Exercise 5: Using Exercise 4 as a base - add a class variable called class_id and a class method that creates a new
 # class_id for every new object by adding 1 to the previous one recording it in the object itself.
 
