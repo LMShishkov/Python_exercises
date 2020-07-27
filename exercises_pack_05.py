@@ -1,3 +1,45 @@
+# Exercise 5: Using Exercise 4 as a base - add a class variable called class_id and a class method that creates a new
+# class_id for every new object by adding 1 to the previous one recording it in the object itself.
+
+class User():
+    class_id = 0
+
+    @classmethod
+    def class_id_update(cls):
+        cls.class_id += 1
+
+    def __init__(self, first_name, last_name, status):
+        User.class_id_update()
+        self.first_name = first_name
+        self.last_name = last_name
+        self.status = status
+        self.id = User.class_id
+        self.login_attempts = 0
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+        print(f'Resetting login for user ID: {self.id}...')
+
+    def describe_user(self):
+        print(f'User names:{self.first_name} {self.last_name} | User status: {self.status} | User ID: {self.id} | '
+              f'Login Attempts: {self.login_attempts}')
+
+    def greet_user(self):
+        print(f'Hello {self.first_name} {self.last_name}!')
+
+
+user1 = User('John', 'Smith', 'active')
+user2 = User('Emma', 'Smith', 'active')
+user3 = User('Jena', 'Smith', 'inactive')
+
+user1.describe_user()
+user2.describe_user()
+user3.describe_user()
+
+
 # Exercise 4: Using Exercise 2 as a base - add Add an attribute called login_attempts to your User class. Write a
 # method called increment_login_attempts() that increments the value of login_attempts by 1. Write another method
 # called reset_login_attempts() that resets the value of login_ attempts to 0. Make an instance of the User class and
