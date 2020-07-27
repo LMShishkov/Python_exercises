@@ -1,3 +1,42 @@
+# Exercise 3: Using Exercise 1 as a base - add an attribute called number_served with a default value of 0. Create an
+# instance called restaurant from this class. Print the number of customers the restaurant has served, and then change
+# this value and print it again. Add a method called set_number_served() that lets you set the number of customers that
+# have been served. Call this method with a new number and print the value again. Add a method called
+# increment_number_served() that lets you increment the number of customers who’ve been served. Call this method with
+# any number you like that could represent how many customers were served in, say, a day of business.
+
+
+class Restaurant():
+
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+
+    def describe_restaurant(self):
+        print(f'{self.restaurant_name} has {self.cuisine_type} cuisine | Number of customers served so far: '
+              f'{self.number_served}')
+
+    def open_restaurant(self):
+        print(f'{self.restaurant_name} is open!')
+
+    def set_number_served(self, customers):
+        self.number_served = customers
+        print(f'Setting the number of customers served to {self.number_served} customers')
+        self.describe_restaurant()
+
+    def increment_number_served(self, additional_customers):
+        self.number_served += additional_customers
+        print(f'Increasing the number of customers served to {self.number_served} customers')
+        self.describe_restaurant()
+
+
+restaurant = Restaurant('Red Dragon', 'Chinese')
+restaurant.describe_restaurant()
+restaurant.set_number_served(13)
+restaurant.increment_number_served(1)
+
+
 # Exercise 2: Make a class called User. Create two attributes called first_name and last_name, and then create several
 # other attributes that are typically stored in a user profile. Make a method called describe_user() that prints a
 # summary of the user’s information. Make another method called greet_user() that prints a personalized greeting to the
