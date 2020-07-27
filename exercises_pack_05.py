@@ -1,3 +1,50 @@
+# Exercise 4: Using Exercise 2 as a base - add Add an attribute called login_attempts to your User class. Write a
+# method called increment_login_attempts() that increments the value of login_attempts by 1. Write another method
+# called reset_login_attempts() that resets the value of login_ attempts to 0. Make an instance of the User class and
+# call increment_login_attempts() several times. Print the value of login_attempts to make sure it was incremented
+# properly, and then call reset_login_attempts(). Print login_attempts again to make sure it was reset to 0.
+
+
+class User():
+
+    def __init__(self, first_name, last_name, status, id):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.status = status
+        self.id = id
+        self.login_attempts = 0
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+        print(f'Resetting login for user ID: {self.id}...')
+
+    def describe_user(self):
+        print(f'User names:{self.first_name} {self.last_name} | User status: {self.status} | User ID: {self.id} | '
+              f'Login Attempts: {self.login_attempts}')
+
+    def greet_user(self):
+        print(f'Hello {self.first_name} {self.last_name}!')
+
+
+user1 = User('John', 'Smith', 'active', '123')
+user2 = User('Emma', 'Smith', 'active', '456')
+user3 = User('Jena', 'Smith', 'inactive', '789')
+
+user1.increment_login_attempts()
+user1.increment_login_attempts()
+user1.increment_login_attempts()
+user1.describe_user()
+user2.describe_user()
+user3.describe_user()
+
+user1.reset_login_attempts()
+
+user1.describe_user()
+
+
 # Exercise 3: Using Exercise 1 as a base - add an attribute called number_served with a default value of 0. Create an
 # instance called restaurant from this class. Print the number of customers the restaurant has served, and then change
 # this value and print it again. Add a method called set_number_served() that lets you set the number of customers that
