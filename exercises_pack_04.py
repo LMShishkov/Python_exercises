@@ -1,3 +1,62 @@
+# Exercise 47: Compute a Grade Point Average - Exercise 36 included a table that shows the conversion from letter grades
+# to grade points at a particular academic institution. In this exercise you will compute the grade point average of an
+# arbitrary number of letter grades entered by the user. The user will enter a blank line to indicate that all of the
+# grades have been provided. For example, if the user enters A, followed by C+, followed by B, followed by a blank line
+# then your program should report a grade point average of 3.1. You may find your solution to Exercise 51 helpful when
+# completing this exercise. Your program does not need to do any error checking. It can assume that each value entered
+# by the user will always be a valid letter grade or a blank line.
+
+print('Letter Grade to Grade Points')
+grade = input('Please input your letter grades to calculate their average (use a blank line to finish): ')
+grade_point = 0
+a = 4.0
+a_minus = 3.7
+b_plus = 3.3
+b = 3.0
+b_minus = 2.7
+c_plus = 2.3
+c = 2.0
+c_minus = 1.7
+d_plus = 1.3
+d = 1.0
+f = 0
+invalid = -1
+grade_counter = 0
+total_grade = 0
+while grade != '':
+    grade = grade.upper()
+    if grade == 'A' or grade == 'A+':
+        grade_point = a
+    elif grade == 'A-':
+        grade_point = a_minus
+    elif grade == 'B+':
+        grade_point = b_plus
+    elif grade == 'B':
+        grade_point = b
+    elif grade == 'B-':
+        grade_point = b_minus
+    elif grade == 'C+':
+        grade_point = c_plus
+    elif grade == 'C':
+        grade_point = c
+    elif grade == 'C-':
+        grade_point = c_minus
+    elif grade == 'D+':
+        grade_point = d_plus
+    elif grade == 'D':
+        grade_point = d
+    elif grade == 'F':
+        grade_point = f
+    else:
+        grade_point = invalid
+    grade_counter += 1
+    total_grade += grade_point
+    grade = input('Please input your letter grades to calculate their average (use a blank line to finish): ')
+
+average_grade = total_grade/grade_counter
+print(f'Your average grade for your {grade_counter} grades is: {average_grade}')
+
+
 # Exercise 46: No More Pennies - February 4, 2013was the last day that pennies were distributed by the Royal Canadian
 # Mint. Now that pennies have been phased out retailers must adjust totals so that they are multiples of 5 cents when
 # they are paid for with cash (credit card and debit card transactions continue to be charged to the penny). While
