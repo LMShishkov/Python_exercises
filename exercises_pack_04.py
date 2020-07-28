@@ -1,3 +1,28 @@
+# Exercise 48: Admission Price - A particular zoo determines the price of admission based on the age of the guest.
+# Guests 2 years of age and less are admitted without charge. Children between 3 and 12 years of age cost $14.00.
+# Seniors aged 65 years and over cost $18.00. Admission for all other guests is $23.00. Create a program that begins by
+# reading the ages of all of the guests in a group from the user, with one age entered on each line. The user will enter
+# a blank line to indicate that there are no more guests in the group. Then your program should display the admission
+# cost for the group with an appropriate message. The cost should be displayed using two decimal places.
+
+print('Admission Price')
+age = input('Please input the age of group members - one per line with space for end: ')
+admission_cost = 0
+group_count = 0
+while age != '':
+    age = int(age)
+    group_count += 1
+    if 3 <= age <= 12:
+        admission_cost += 14.00
+    elif 13 <= age <= 64:
+        admission_cost += 23.00
+    elif age >= 65:
+        admission_cost += 18.00
+    age = input('Please input the age of group members - one per line with space for end: ')
+
+print('Total admission cost for the group of {0} people is {1:.2f}$'.format(group_count, admission_cost))
+
+
 # Exercise 47: Compute a Grade Point Average - Exercise 36 included a table that shows the conversion from letter grades
 # to grade points at a particular academic institution. In this exercise you will compute the grade point average of an
 # arbitrary number of letter grades entered by the user. The user will enter a blank line to indicate that all of the
