@@ -1,3 +1,53 @@
+# Exercise 49: Caesar Cipher - One of the first known examples of encryption was used by Julius Caesar. Caesar needed to
+# provide written instructions to his generals, but he didn’t want his enemies  to learn his plans if the message
+# slipped into their hands. As result, he developed what later became known as the Caesar Cipher. The idea behind this
+# cipher is simple (and as a result, it provides no protection against modern code breaking techniques). Each letter in
+# the original message is shifted by 3 places. As a result, A becomes D, B becomes E, C becomes F, D becomes G, etc. The
+# last three letters in the alphabet are wrapped around to the beginning: X becomes A, Y becomes B and Z becomes C.
+# Non-letter characters are not modified by the cipher. Write a program that implements a Caesar cipher. Allow the user
+# to supply the message and the shift amount, and then display the shifted message. Ensure that your program encodes
+# both uppercase and lowercase letters. Your program should also support negative shift values so that it can be used
+# both to encode messages and decode messages.
+
+print('Caesar Cipher')
+new_message = ''
+choice = input('Select E for encoding | Select D for decoding: ')
+if choice == 'E':
+    message = input('Input the message to be encoded: ')
+    shift_amount = int(input('Select the shift amount to be applied for the encoding: '))
+    for i in message:
+        if 'a' <= i <= 'z':
+            pos = ord(i) - ord('a')
+            pos = (pos + shift_amount) % 26
+            new_char = chr(pos + ord('a'))
+            new_message += new_char
+        elif 'A' <= i <= 'Z':
+            pos = ord(i) - ord('A')
+            pos = (pos + shift_amount) % 26
+            new_char = chr(pos + ord('A'))
+            new_message += new_char
+        else:
+            new_message += i
+    print('The encoded message is:', new_message)
+if choice == 'D':
+    message = input('Input the message to be decoded: ')
+    shift_amount = int(input('Select the shift amount to be applied for the decoding: '))
+    for i in message:
+        if 'a' <= i <= 'z':
+            pos = ord(i) - ord('a')
+            pos = (pos - shift_amount) % 26
+            new_char = chr(pos + ord('a'))
+            new_message += new_char
+        elif 'A' <= i <= 'Z':
+            pos = ord(i) - ord('A')
+            pos = (pos - shift_amount) % 26
+            new_char = chr(pos + ord('A'))
+            new_message += new_char
+        else:
+            new_message += i
+    print('The encoded message is:', new_message)
+
+
 # Exercise 48: Admission Price - A particular zoo determines the price of admission based on the age of the guest.
 # Guests 2 years of age and less are admitted without charge. Children between 3 and 12 years of age cost $14.00.
 # Seniors aged 65 years and over cost $18.00. Admission for all other guests is $23.00. Create a program that begins by
