@@ -1,3 +1,23 @@
+# Exercise 50: Exercise 50: Square Root - Write a program that implements Newton’smethod to compute and display the
+# square root of a number entered by the user. The algorithm for Newton’s method follows:
+# Read x from the user
+# Initialize guess to x/2
+# While guess is not good enough do
+#     Update guess to be the average of guess and x/guess
+#
+# When this algorithm completes, guess contains an approximation of the square root. The quality of the approximation
+# depends on how you define “good enough”. In the author’s solution, guess was considered good enough when the absolute
+# alue of the difference between guess ∗ guess and x was less than or equal to 10−12.
+
+print("Square Root - Newthon's method")
+x = int(input('Input an integer: '))
+a = float(x)
+for i in range(3):
+    x = 0.5 * (x + a / x)
+
+print('{0:.7f}'.format(x))
+
+
 # Exercise 49: Caesar Cipher - One of the first known examples of encryption was used by Julius Caesar. Caesar needed to
 # provide written instructions to his generals, but he didn’t want his enemies  to learn his plans if the message
 # slipped into their hands. As result, he developed what later became known as the Caesar Cipher. The idea behind this
