@@ -2,7 +2,8 @@
 # backward. For example “anna”, “civic”, “level” and “hannah” are all examples of palindromicwords. Write a program
 # that reads a string from the user and uses a loop to determines whether or not it is a palindrome. Display the result,
 # including a meaningful output message.
-# Solution #1 -  simple, sub-optimal using a built-in function:
+
+# Solution #1 - simple, sub-optimal using a built-in function:
 
 print('Is it a palindrome?')
 word = input('Please input a word to check if it is a palindrome: ')
@@ -14,7 +15,22 @@ if word == rev_word:
 else:
     print(f'{word} is not a palindrome')
 
+# Solution #2 - a bit more complex, avoiding the reversed function but still sub-optimal as two data structures are
+# used:
 
+print('Is it a palindrome?')
+word = input('Please input a word to check if it is a palindrome: ')
+rev_word = ''
+i = 0
+for a in word:
+    i -= 1
+    rev_word += word[i]
+if word == rev_word:
+    print(f'{word} is a palindrome')
+else:
+    print(f'{word} is not a palindrome')
+
+# 
 
 # Exercise 50: Exercise 50: Square Root - Write a program that implements Newton’smethod to compute and display the
 # square root of a number entered by the user. The algorithm for Newton’s method follows:
