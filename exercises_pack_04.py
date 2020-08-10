@@ -45,6 +45,15 @@ if word_palindrome:
 else:
     print(f'{word} is not palindrome')
 
+# Solution 4 - using only slicing operator
+
+print('Is it a palindrome?')
+word = input('Please input a word to check if it is a palindrome: ')
+if word == word[::-1]:
+    print(f'{word} is a palindrome')
+else:
+    print(f'{word} is not palindrome')
+
 
 # Exercise 50: Exercise 50: Square Root - Write a program that implements Newton’smethod to compute and display the
 # square root of a number entered by the user. The algorithm for Newton’s method follows:
