@@ -30,7 +30,21 @@ if word == rev_word:
 else:
     print(f'{word} is not a palindrome')
 
-# 
+# Solution 3 - optimal, using one data structure instead of two, performs a mirror check of one end of the string vs.
+# the other end:
+
+print('Is it a palindrome?')
+word = input('Please input a word to check if it is a palindrome: ')
+word_palindrome = True
+for i in range(0, len(word) // 2):
+    if word[i] != word[len(word) - i - 1]:
+        word_palindrome = False
+
+if word_palindrome:
+    print(f'{word} is a palindrome')
+else:
+    print(f'{word} is not palindrome')
+
 
 # Exercise 50: Exercise 50: Square Root - Write a program that implements Newton’smethod to compute and display the
 # square root of a number entered by the user. The algorithm for Newton’s method follows:
