@@ -1,3 +1,21 @@
+# Exercise 51: Exercise 51: Is a String a Palindrome? - A string is a palindrome if it is identical forward and
+# backward. For example “anna”, “civic”, “level” and “hannah” are all examples of palindromicwords. Write a program
+# that reads a string from the user and uses a loop to determines whether or not it is a palindrome. Display the result,
+# including a meaningful output message.
+# Solution #1 -  simple, sub-optimal using a built-in function:
+
+print('Is it a palindrome?')
+word = input('Please input a word to check if it is a palindrome: ')
+rev_word = ''
+for i in reversed(word):
+    rev_word += i
+if word == rev_word:
+    print(f'{word} is a palindrome')
+else:
+    print(f'{word} is not a palindrome')
+
+
+
 # Exercise 50: Exercise 50: Square Root - Write a program that implements Newton’smethod to compute and display the
 # square root of a number entered by the user. The algorithm for Newton’s method follows:
 # Read x from the user
