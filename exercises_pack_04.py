@@ -1,3 +1,22 @@
+# Exercise 52:  MultipleWord Palindromes - There are numerous phrases that are palindromes when spacing is ignored.
+# Examples include “go dog”, “flee to me remote elf” and “some men interpret nine memos”, among many others. Extend
+# your solution to Exercise 72 so that it ignores spacing while determining whether or not a string is a palindrome.
+# For an additional challenge, extend your solution so that is also ignores punctuation marks and treats uppercase
+# and lowercase letters as equivalent
+
+print('Is the sentence a palindrome?')
+sent = input('Please input a combination of words or a sentence to check if it is a palindrome: ').lower()
+sent_no_space = ''
+for i in sent:
+    if i != ' ':
+        sent_no_space += i
+
+if sent_no_space == sent_no_space[::-1]:
+    print(f'{sent} is a palindrome')
+else:
+    print(f'{sent} is not palindrome')
+    
+
 # Exercise 51: Exercise 51: Is a String a Palindrome? - A string is a palindrome if it is identical forward and
 # backward. For example “anna”, “civic”, “level” and “hannah” are all examples of palindromicwords. Write a program
 # that reads a string from the user and uses a loop to determines whether or not it is a palindrome. Display the result,
