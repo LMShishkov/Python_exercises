@@ -1,3 +1,27 @@
+# Exercise 53: Multiplication Table - In this exercise you will create a program that displays a multiplication table
+# that shows the products of all combinations of integers from 1 times 1 up to and including 10 times 10. Your
+# multiplication table should include a row of labels across the top of it containing the numbers 1 through 10. It
+# should also include labels down the left side consisting of the numbers 1 through 10. The expected output from the
+# program is shown in the chart. When completing this exercise you will probably find it helpful to be able to print
+# out a value without moving down to the next line. This can be accomplished by added end="" as the last parameter to
+# your print statement. For example, print("A") will display the letter A and then move down to the next line. The
+# statement print("A", end="") will display the letter A without moving down to the next line, causing the next print
+# statement to display its result on the same line as the letter A. (check notion.so link for table display)
+
+print('Multiplication Table')
+b = 0
+print('      ', end='')
+for a in range(1, 11):
+    print('{:4d}'.format(a), ' ', end='')
+print('')
+for i in range(1, 11):
+    print('{:4d}'.format(i), ' ', end='')
+    for a in range(1, 11):
+        b = a * i
+        print('{:4d}'.format(b), ' ', end='')
+    print('')
+
+
 # Exercise 52:  MultipleWord Palindromes - There are numerous phrases that are palindromes when spacing is ignored.
 # Examples include “go dog”, “flee to me remote elf” and “some men interpret nine memos”, among many others. Extend
 # your solution to Exercise 72 so that it ignores spacing while determining whether or not a string is a palindrome.
@@ -15,7 +39,6 @@ if sent_no_space == sent_no_space[::-1]:
     print(f'{sent} is a palindrome')
 else:
     print(f'{sent} is not palindrome')
-    
 
 # Exercise 51: Exercise 51: Is a String a Palindrome? - A string is a palindrome if it is identical forward and
 # backward. For example “anna”, “civic”, “level” and “hannah” are all examples of palindromicwords. Write a program
@@ -73,8 +96,7 @@ if word == word[::-1]:
 else:
     print(f'{word} is not palindrome')
 
-
-# Exercise 50: Exercise 50: Square Root - Write a program that implements Newton’smethod to compute and display the
+# Exercise 50: Exercise 50: Square Root - Write a program that implements Newton’s method to compute and display the
 # square root of a number entered by the user. The algorithm for Newton’s method follows:
 # Read x from the user
 # Initialize guess to x/2
@@ -92,7 +114,6 @@ for i in range(3):
     x = 0.5 * (x + a / x)
 
 print('{0:.7f}'.format(x))
-
 
 # Exercise 49: Caesar Cipher - One of the first known examples of encryption was used by Julius Caesar. Caesar needed to
 # provide written instructions to his generals, but he didn’t want his enemies  to learn his plans if the message
@@ -143,7 +164,6 @@ if choice == 'D':
             new_message += i
     print('The encoded message is:', new_message)
 
-
 # Exercise 48: Admission Price - A particular zoo determines the price of admission based on the age of the guest.
 # Guests 2 years of age and less are admitted without charge. Children between 3 and 12 years of age cost $14.00.
 # Seniors aged 65 years and over cost $18.00. Admission for all other guests is $23.00. Create a program that begins by
@@ -167,7 +187,6 @@ while age != '':
     age = input('Please input the age of group members - one per line with space for end: ')
 
 print('Total admission cost for the group of {0} people is {1:.2f}$'.format(group_count, admission_cost))
-
 
 # Exercise 47: Compute a Grade Point Average - Exercise 36 included a table that shows the conversion from letter grades
 # to grade points at a particular academic institution. In this exercise you will compute the grade point average of an
@@ -224,11 +243,10 @@ while grade != '':
     total_grade += grade_point
     grade = input('Please input your letter grades to calculate their average (use a blank line to finish): ')
 
-average_grade = total_grade/grade_counter
+average_grade = total_grade / grade_counter
 print(f'Your average grade for your {grade_counter} grades is: {average_grade}')
 
-
-# Exercise 46: No More Pennies - February 4, 2013was the last day that pennies were distributed by the Royal Canadian
+# Exercise 46: No More Pennies - February 4, 2013 was the last day that pennies were distributed by the Royal Canadian
 # Mint. Now that pennies have been phased out retailers must adjust totals so that they are multiples of 5 cents when
 # they are paid for with cash (credit card and debit card transactions continue to be charged to the penny). While
 # retailers have some freedomin how they do this, most choose to round to the closest nickel. Write a program that reads
@@ -254,8 +272,7 @@ else:
     rounded_total = total_transformed - total_transformed % pennies_per_nickel
 
 print('Amount due: {0:.2f}$'.format(total))
-print('Amount due in cash: {0:.2f}$'.format(rounded_total/100))
-
+print('Amount due in cash: {0:.2f}$'.format(rounded_total / 100))
 
 # Exercise 45: Temperature Conversion Table - Write a program that displays a temperature conversion table for degrees
 # Celsius and degrees Fahrenheit. The table should include rows for all temperatures between 0 and 100 degrees Celsius
@@ -265,8 +282,7 @@ print('Amount due in cash: {0:.2f}$'.format(rounded_total/100))
 print('Temperature conversion table')
 temperature_c = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 for i in temperature_c:
-    print('Temperature in Celsius: {0:.2f} = {1:.2f} Fahrenheit'.format(i, (i*9)/5 + 32))
-
+    print('Temperature in Celsius: {0:.2f} = {1:.2f} Fahrenheit'.format(i, (i * 9) / 5 + 32))
 
 # Exercise 44: Discount Table - A particular retailer is having a 60 percent off sale on a variety of discontinued
 # products. The retailer would like to help its customers determine the reduced price of the merchandise by having a
@@ -282,9 +298,9 @@ discount = int(discount)
 prices = list(map(float, prices))
 
 for price in prices:
-    print('Original price: {0:.2f}$ | Discount: {1:.2f}$ | New price: {2:.2f}$'.format(price, (price*discount)/100,
-    (price-(price*discount)/100)))
-
+    print('Original price: {0:.2f}$ | Discount: {1:.2f}$ | New price: {2:.2f}$'.format(price, (price * discount) / 100,
+                                                                                       (price - (
+                                                                                                   price * discount) / 100)))
 
 # Exercise 43: Average - In this exercise you will create a program that computes the average of a collection of values
 # entered by the user. The user will enter 0 as a sentinel value to indicate that no further values will be provided.
@@ -297,11 +313,10 @@ total = 0
 length = len(a)
 for i in a:
     total += i
-average = total / (length-1)
+average = total / (length - 1)
 print(average)
 
-
-# Exercise 42: Exercise 42: Roulette Payouts - Aroulette wheel has 38 spaces on it. Of these spaces, 18 are black, 18
+# Exercise 42: Exercise 42: Roulette Payouts - A roulette wheel has 38 spaces on it. Of these spaces, 18 are black, 18
 # are red, and two are green. The green spaces are numbered 0 and 00. The red spaces are numbered 1, 3, 5, 7, 9, 12, 14,
 # 16, 18, 19, 21, 23, 25, 27, 30 32, 34 and 36. The remaining integers between 1 and 36 are used to number the black
 # spaces. Many different bets can be placed in roulette.We will only consider the following subset of them in this
@@ -326,7 +341,7 @@ print(average)
 import random
 
 print('Roulette Payouts')
-random_number = random.randint(0,37)
+random_number = random.randint(0, 37)
 even_odd_win = ''
 color_win = ''
 range_win = ''
@@ -364,7 +379,6 @@ print(f'Pay {random_number}')
 print(f'Pay {color_win}')
 print(f'Pay {even_odd_win}')
 print(f'Pay {range_win}')
-
 
 # Exercise 41: Next Day - Write a program that reads a date from the user and computes its immediate successor. For
 # example, if the user enters values that represent 2013-11-18 then your program should display a message indicating
@@ -412,7 +426,6 @@ if next_month == 1:
 print(f'Current day is: {day} - {month} - {year}')
 print(f'Next day is: {next_day} - {next_month} - {next_year}')
 
-
 # Exercise 40: Is it a Leap Year? Most years have 365 days. However, the time required for the Earth to orbit the Sun is
 # actually slightly more than that. As a result, an extra day, February 29, is included in some years to correct for
 # this difference. Such years are referred to as leap years. The rules for determining whether or not a year is a leap
@@ -434,20 +447,19 @@ elif year % 4 == 0:
 else:
     print(f'{year} is not a leap year')
 
-
-#Exercise 39: Exercise 39: Cell Phone Bill - A particular cell phone plan includes 50 minutes of air time and 50 text
-# messages for $15.00 a month. Each additional minute of air time costs $0.25, while additional text messages cost $0.15
-# each. All cell phone bills include an additional charge of $0.44 to support 911 call centers, and the entire bill
-# (including the 911 charge) is subject to 5 percent sales tax. Write a program that reads the number of minutes and
-# text messages used in a month from the user. Display the base charge, additional minutes charge (if any), additional
-# text message charge (if any), the 911 fee, tax and total bill amount. Only display the additional minute and text
-# message charges if the user incurred costs in these categories. Ensure that all of the charges are displayed using
-# 2 decimal places.
+# Exercise 39: Cell Phone Bill - A particular cell phone plan includes 50 minutes of air time and 50 text messages
+# for $15.00 a month. Each additional minute of air time costs $0.25, while additional text messages cost $0.15 each.
+# All cell phone bills include an additional charge of $0.44 to support 911 call centers, and the entire bill (
+# including the 911 charge) is subject to 5 percent sales tax. Write a program that reads the number of minutes and
+# text messages used in a month from the user. Display the base charge, additional minutes charge (if any),
+# additional text message charge (if any), the 911 fee, tax and total bill amount. Only display the additional minute
+# and text message charges if the user incurred costs in these categories. Ensure that all of the charges are
+# displayed using 2 decimal places.
 
 print('The cell phone invoicing tool')
 minutes = int(input('Please input the number of minutes and messages used for the given month: '))
 messages = int(input('Please input the number of minutes and messages used for the given month: '))
-print('-'*10)
+print('-' * 10)
 base_charge = 15
 print('Base charge: {0:.2f}$'.format(base_charge))
 extra_minutes = 0
@@ -464,10 +476,9 @@ sales_tax_percentage = 0.05
 sales_tax = (base_charge + support_charge + extra_minutes + extra_messages) * sales_tax_percentage
 print('Sales tax 5% charge: {0:.2f}$'.format(sales_tax))
 total_charge = base_charge + support_charge + extra_minutes + extra_messages + sales_tax
-print('='*10)
+print('=' * 10)
 print('')
 print('Total charge: {0:.2f}$'.format(total_charge))
-
 
 # Exercise 38: Wavelengths of Visible Light - The wavelength of visible light ranges from 380 to 750 nanometers (nm).
 # While the spectrum is continuous, it is often divided into 6 colors as shown in the chart (check notion.so link for
@@ -497,7 +508,6 @@ elif 620 <= wave_len < 750:
 if error_message is False:
     print(f'Wave with length of {wave_len} nm is in the {color} spectrum')
 
-
 # Exercise 37: Assessing Employees - At a particular company, employees are rated at the end of each year. The rating
 # scale begins at 0.0, with higher values indicating better performance and resulting in larger raises. The value
 # awarded to an employee is either 0.0, 0.4, or 0.6 or more. Values between 0.0 and 0.4, and between 0.4 and 0.6 are
@@ -520,7 +530,6 @@ elif emp_rating >= 0.6:
     print(f'Employee rating of {emp_rating} means meritorious performance and {emp_raise}$ raise')
 elif 0 < emp_rating < 0.4 or 0.4 < emp_rating < 0.6:
     print(f'{emp_rating} is invalid')
-
 
 # Exercise 36: Letter Grade to Grade Points - At a particular university, letter grades are mapped to grade points as
 # shown in the chart (check notion.so link for table). Write a program that begins by reading a letter grade from the
@@ -572,7 +581,6 @@ if grade_point != invalid:
 else:
     print(f'{grade} is an invalid letter grade')
 
-
 # Exercise 35: Chinese Zodiac - The Chinese zodiac assigns animals to years in a 12 year cycle. One 12 year cycle is
 # shown in the table (check notion.so link for table with dates). The pattern repeats from there, with 2012 being
 # another year of the dragon, and 1999 being another year of the hare. Write a program that reads a year from the user
@@ -605,7 +613,6 @@ elif year_of_birth % 12 == 6:
 elif year_of_birth % 12 == 7:
     zodiac_sign = 'Hare'
 print(f'{year_of_birth} is the year of {zodiac_sign}')
-
 
 # Exercise 34 Season from Month and Day - The year is divided into four seasons: spring, summer, fall and winter.
 # While the exact dates that the seasons change vary a little bit from year to year because of the way that the calendar
@@ -721,8 +728,6 @@ elif side1 == side2 == side3:
 else:
     print('The triangle is isosceles')
 
-
-
 # Exercise 30: Sound Levels - The following table (check notion.so link) lists the sound level in decibels for several
 # common noises. Write a program that reads a sound level in decibels from the user. If the user enters a decibel level
 # that matches one of the noises in the table then your program should display a message containing only that noise. If
@@ -751,7 +756,6 @@ if sound_level == 40:
 if 40 > sound_level:
     print(f'{sound_level}dBs is not louder than a Quiet room')
 
-
 # Exercise 20: Month Name to Number of Days - The length of a month varies from 28 to 31 days. In this exercise you will
 # create a program that reads the name of a month from the user as a string. Then your # program should display the
 # number of days in that month. Display “28 or 29 days” for February so that leap years are addressed.
@@ -765,7 +769,6 @@ if month_name in short_months:
 elif month_name == 'February':
     days = '28 or 29 days'
 print(f'{month_name} has {days}')
-
 
 # Exercise 19: Name that Shape - Write a program that determines the name of a shape from its number of sides. Read the
 # number of sides from the user and then report the appropriate name as part of a meaningful message. Your program
@@ -797,7 +800,6 @@ if name == '':
 else:
     print(f'That is a {name}!')
 
-
 # Exercise 18:  Vowel or Consonant - In this exercise you will create a program that reads a letter of the alphabet from
 # the user. If the user enters a, e, i, o or u then your program should display a message indicating that the entered
 # letter is a vowel. If the user enters y then your program should display a message indicating that sometimes y is a
@@ -814,7 +816,6 @@ elif letter == 'y':
 else:
     print(f'"{letter}" is a consonant')
 
-
 # Exercise 17: Dog Years - It is commonly said that one human year is equivalent to 7 dog years. However this simple
 # conversion fails to recognize that dogs reach adulthood in approximately two years. As a result, some people believe
 # that it is better to count each of the first two human years as 10.5 dog years, and then count each additional human
@@ -829,9 +830,8 @@ elif 0 < dog_age <= 2:
     dog_human_age = dog_age * 10.5
     print(f'Your dog is {dog_human_age}-year old in human years')
 elif dog_age > 2:
-    dog_human_age = 21 + ((dog_age-2)*4)
+    dog_human_age = 21 + ((dog_age - 2) * 4)
     print(f'Your dog is {dog_human_age}-year old in human years')
-
 
 # Exercise 16: Even or Odd? - Write a program that reads an integer from the user. Then your program should display a
 # message indicating whether the integer is even or odd.
@@ -842,7 +842,6 @@ num_even = False
 if num % 2 == 0:
     num_even = True
 print(num_even)
-
 
 # Exercise 15: Day Old Bread - A bakery sells loaves of bread for $3.49 each. Day old bread is discounted by 60 percent.
 # Write a program that begins by reading the number of loaves of day old bread being purchased from the user. Then your
@@ -862,7 +861,6 @@ print(f'Total regular price for {old_bread_loaves} bread: ', '{0:50.2f}'.format(
 print(f'Total discount for {old_bread_loaves} bread: ', '     {0:50.2f}'.format(discount), '$')
 print(f'Total total price for {old_bread_loaves} bread: ', '  {0:50.2f}'.format(total_disc), '$')
 
-
 # Exercise 14: Sort 3 Integers - Create a program that reads three integers from the user and displays them in sorted
 # order (from smallest to largest). Use the min and max functions to find the smallest and largest values. The middle
 # value can be found by computing the sum of all three values, and then subtracting the minimum value and the maximum
@@ -875,20 +873,19 @@ smallest = min(a, b, c)
 middle = a + b + c - biggest - smallest
 print(smallest, middle, biggest)
 
-
 # Exercise 13: Area and Volume - Write a program that begins by reading a radius, r , from the user. The program will
 # continue by computing and displaying the area of a circle with radius r and the volume of a sphere with radius r .
 # Use the pi constant in the math module in your calculations. Hint: The area of a circle is computed using the
 # formula area = πr^2. The volume of a sphere is computed using the formula volume = 4/3*πr^3
 
 import math
+
 print('The circle area and sphere volume calculator')
 radius = int(input('Please input the radius in centimeters: '))
 circle_area = math.pi * (radius ** 2)
 sphere_volume = 4 * (math.pi * (radius ** 3)) / 3
 print(f'The circle area with radius {radius} is:', ' {0:.2f}'.format(circle_area), ' square centimeters')
 print(f'The sphere volume with radius {radius} is:', ' {0:.2f}'.format(sphere_volume), 'cubic centimeters')
-
 
 # Exercise 12: Distance Units - In this exercise, you will create a program that begins by reading a measurement in
 # feet from the user. Then your program should display the equivalent distance in inches, yards and miles. Use the
@@ -903,7 +900,6 @@ print('The equivalent of ', feet, ' in inches is: {0:.2f}'.format(inches_equival
 print('The equivalent of ', feet, ' in yards is: {0:.2f}'.format(yards_equivalent))
 print('The equivalent of ', feet, ' in miles is: {0:.2f}'.format(miles_equivalent))
 
-
 # Exercise 11: Height Units - Many people think about their height in feet and inches, even in some countries that
 # primarily use the metric system. Write a program that reads a number of feet from the user, followed by a number of
 # inches. Once these values are read, your program should compute and display the equivalent number of centimeters.
@@ -912,7 +908,6 @@ print('The height units converter')
 feet, inches = input('Please enter your height feet and inches: ').split()
 centimeters = (int(feet) * 12 + int(inches)) * 2.54
 print(f'Your height is {centimeters} centimeters')
-
 
 # Exercise 10: Making Change - Consider the software that runs on a self-checkout machine. One task that it must be
 # able to perform is to determine how much change to provide when the shopper pays for a purchase with cash. Write a
@@ -929,7 +924,7 @@ CENTS_PER_DIME = 10
 CENTS_PER_NICKEL = 5
 
 change = float(input('Enter the number in $: '))
-cents = change*100
+cents = change * 100
 
 print(' ', cents // CENTS_PER_TOONIE, 'toonies')
 cents = cents % CENTS_PER_TOONIE
@@ -948,7 +943,6 @@ cents = cents % CENTS_PER_NICKEL
 
 print(' ', cents, 'pennies')
 
-
 # Exercise 9: Fuel Converter - In the United States, fuel efficiency for vehicles is normally expressed in
 # miles-per-gallon (MPG). In Canada, fuel efficiency is normally expressed in liters-per-hundred kilometers (L/100
 # km). Use your research skills to determine how to convert from MPGto L/100 km. Then create a program that reads a
@@ -959,7 +953,6 @@ fuel_consumption_american = int(input('Please input the fuel consumption in mile
 ratio = 235.215
 fuel_consumption_canadian = ratio / fuel_consumption_american
 print('Fuel consumption in liters-per-100 kilometers (L/100km): {0:.2f}'.format(fuel_consumption_canadian))
-
 
 # Exercise 8: Compound Interest - Pretend that you have just opened a new savings account that earns 11% interest per
 # year. The interest that you earn is paid at the end of the year, and is added to the balance of the savings
@@ -976,7 +969,6 @@ balance_y3_end = balance_y2_end + balance_y2_end * interst_rate
 print('Balance at the end of Y1 is: {0:.2f}$\nBalance at the end of Y2 is: {1:.2f}$\nBalance at the end of Y3 is: \
 {2:.2f}$ \n'.format(balance_y1_end, balance_y2_end, balance_y3_end))
 
-
 # Exercise 7: Widgets and Gizmos - An online retailer sells two products: widgets and gizmos. Each widget
 # weighs 75 grams. Each gizmo weighs 112 grams. Write a program that reads the number of widgets and the number of
 # gizmos in an order from the user. Then your program should compute and display the total weight of the order.
@@ -985,9 +977,8 @@ print('The widgets and gizmos weight calculator')
 widgets, gizmos = input("Enter the amount of widgets and gizmos: ").split()
 widget_weight = 75
 gizmo_weight = 112
-total_weight = int(widgets)*widget_weight + int(gizmos)*gizmo_weight
+total_weight = int(widgets) * widget_weight + int(gizmos) * gizmo_weight
 print(f'The total weight of your order is: {total_weight} grams')
-
 
 # Exercise 6: Sum of the First n Positive Integers - Write a program that reads a positive integer, n,
 # from the user and then displays the sum of all of the integers from 1 to n. The sum of the first n positive
@@ -995,9 +986,8 @@ print(f'The total weight of your order is: {total_weight} grams')
 
 print('Sum of all integers from 1 to n')
 n = int(input('Supply a positive integer for n: '))
-sum_to_n = (n*(n+1))/2
+sum_to_n = (n * (n + 1)) / 2
 print(f'Sum of the First {n} Positive Integers is: {sum_to_n}')
-
 
 # Exercise 5: Tax and Tip - The program that you create for this exercise will begin by reading the cost of a meal
 # ordered at a restaurant from the user. Then your program will compute the tax and tip for the meal. Use your local
@@ -1015,7 +1005,6 @@ tip = meal_cost * tip_rate
 grand_total = meal_cost + tax + tip
 print('Tip = {0:.2f}$ \nTax = {1:.2f}$ \nGrand Total = {2:.2f}$'.format(tip, tax, grand_total))
 
-
 # Exercise 4: Bottle Deposits - In many jurisdictions a small deposit is added to drink containers to encourage
 # people to recycle them. In one particular jurisdiction, drink containers holding one liter or less have a $0.10
 # deposit, and drink containers holding more than one liter have a $0.25 deposit. Write a program that reads the
@@ -1030,7 +1019,6 @@ refund = small_container * 0.1 + big_container * 0.25
 formatted_refund = '{:.2f}'.format(refund)
 print(f'Your total refund is {formatted_refund}$')
 
-
 # Exercise 3: Area of a Field - Create a program that reads the length and width of a farmer’s field from the user in
 # feet. Display the area of the field in acres.
 
@@ -1040,7 +1028,6 @@ field_length = float(input('Please enter the length of your field in feet: '))
 field_area = (field_width * field_length) / 43.560
 formatted_field_area = '{:.2f}'.format(field_area)
 print(f'Your field area is {formatted_field_area} acres')
-
 
 # Exercise 2: Area of a Room - Write a program that asks the user to
 # enter the width and length of a room. Once the values have been read, your program should compute and display the
@@ -1052,7 +1039,6 @@ room_width = float(input('Please enter the width of your room in meters: '))
 room_length = float(input('Please enter the length of your room in meters: '))
 room_area = room_width * room_length
 print(f'Your room area is {room_area} square meters')
-
 
 # Exercise 1: Hello - Write a program that asks the user to enter his or her name. The program should respond with a
 # message that says hello to the user, using his or her name.
