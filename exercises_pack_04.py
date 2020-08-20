@@ -1,3 +1,28 @@
+# Exercise 54: Greatest Common Divisor  - The greatest common divisor of two positive integers, n and m,
+# is the largest number, d, which divides evenly into both n and m. There are several algorithms that can be used to
+# solve this problem, including: *Initialize d to the smaller of m and n. While d does not evenly divide m or d does
+# not evenly divide n do Decrease the value of d by 1 Report d as the greatest common divisor of n and m*
+#
+# Write a program that reads two positive integers from the user and uses this algorithm to determine and report
+# their greatest common divisor.
+#
+# Solution 1: with a while-or loop
+
+print('Greatest Common Divisor')
+m, n = input('Please input two positive integers: ').split()
+m = int(m)
+n = int(n)
+d = 0
+if m > n:
+    d = n
+else:
+    d = m
+
+while n % d != 0 or m % d != 0:
+    d -= 1
+print(d)
+
+
 # Exercise 53: Multiplication Table - In this exercise you will create a program that displays a multiplication table
 # that shows the products of all combinations of integers from 1 times 1 up to and including 10 times 10. Your
 # multiplication table should include a row of labels across the top of it containing the numbers 1 through 10. It
