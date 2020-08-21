@@ -6,7 +6,7 @@
 # Write a program that reads two positive integers from the user and uses this algorithm to determine and report
 # their greatest common divisor.
 #
-# Solution 1: with a while-or loop
+# Solution 1: with a while loop
 
 print('Greatest Common Divisor')
 m, n = input('Please input two positive integers: ').split()
@@ -22,6 +22,24 @@ while n % d != 0 or m % d != 0:
     d -= 1
 print(d)
 
+# Solution 2: with a for loop
+
+print('Greatest Common Divisor')
+m, n = input('Please input two positive integers: ').split()
+m = int(m)
+n = int(n)
+d = 0
+if m > n:
+    d = n
+else:
+    d = m
+
+for i in range(1, d):
+    if n % d == 0 and m % d == 0:
+        print(d)
+        break
+    d -= 1
+    
 
 # Exercise 53: Multiplication Table - In this exercise you will create a program that displays a multiplication table
 # that shows the products of all combinations of integers from 1 times 1 up to and including 10 times 10. Your
