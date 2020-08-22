@@ -1,3 +1,33 @@
+# Exercise 55: Prime Factors - The prime factorization of an integer, n, can be determined using the following steps:
+#
+# *Initialize factor to two
+# While factor is less than or equal to n do
+#     If n is evenly divisible by factor then
+#         Conclude that factor is a factor of n
+#         Divide n by factor using integer division
+#     Else
+#         Increase factor by one*
+#
+# Write a program that reads an integer from the user. If the value entered by the user is less than 2 then your
+# program should display an appropriate error message. Otherwise your program should display the prime numbers that
+# can be multiplied together to compute n, with one factor appearing on each line.
+
+print('Prime factors')
+num = int(input('Enter an integer (2 or greater): '))
+f = 2
+while num < f:
+    print('Integer must be 2 or greater!')
+    num = int(input('Enter an integer (2 or greater): '))
+
+while f <= num:
+    if num % f == 0:
+        num = num / f
+        print(f)
+    else:
+        f += 1
+print(num)
+
+
 # Exercise 54: Greatest Common Divisor  - The greatest common divisor of two positive integers, n and m,
 # is the largest number, d, which divides evenly into both n and m. There are several algorithms that can be used to
 # solve this problem, including: *Initialize d to the smaller of m and n. While d does not evenly divide m or d does
