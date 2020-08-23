@@ -1,3 +1,20 @@
+# Exercise 56: Binary to Decimal - Write a program that converts a binary (base 2) number to decimal (base 10). Your
+# program should begin by reading the binary number from the user as a string. Then it should compute the equivalent
+# decimal number by processing each digit in the binary number. Finally, your program should display the equivalent
+# decimal number with an appropriate message.
+
+print('Binary to Decimal')
+decimal = 0
+binary = input('Please enter the number to convert to binary: ')
+power = 0
+for i in binary:
+    ii = int(i) * 2 ** power
+    decimal += ii
+    power += 1
+
+print(decimal)
+
+
 # Exercise 55: Prime Factors - The prime factorization of an integer, n, can be determined using the following steps:
 #
 # *Initialize factor to two
