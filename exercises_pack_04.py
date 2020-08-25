@@ -1,3 +1,37 @@
+# Exercise 58: Maximum Integer - This exercise examines the process of identifying the maximum value in a collection of
+# integers. Each of the integers will be randomly selected from the numbers between 1 and 100. The collection of
+# integers may contain duplicate values, and some of the integers between 1 and 100 may not be present. Take a moment
+# and think about how you would handle this problem on paper. Many people would check each integer in sequence and ask
+# hemself if the number that they are currently considering is larger than the largest number that they have seen
+# previously. If it is, then they forget the previous maximum number and remember the current number as the new maximum
+# number. This is a reasonable approach, and will result in the correct answer when the process is performed carefully.
+# While we can answer the question posed at the end of the previous paragraph using probability theory, we are going to
+# explore it by simulating the situation. Create a program that begins by selecting a random integer between 1 and 100.
+# Save this integer as the maximum number encountered so far. After the initial integer has been selected, generate 99
+# additional random integers between 1 and 100. Check each integer as it is generated to see if it is larger than the
+# maximum number encountered so far. If it is then your program should update the maximum number encountered and count
+# the fact that you performed an update. Display each integer after you generate it. Include a notation with those
+# integers which represent a new maximum. After you have displayed 100 integers your program should display the maximum
+# value encountered, along with the number of times the maximum value was updated during the process.
+
+import random
+
+print('Maximum Integer')
+list = []
+update_counter = 0
+max = random.randint(1, 100)
+print(max)
+while len(list) < 99:
+    list.append(random.randint(1, 100))
+    if list[len(list)-1] > max:
+        max = list[len(list)-1]
+        print(f'{max} <== Update')
+        update_counter += 1
+    else:
+        print(list[len(list)-1])
+print(f'Maximum integer for 100 random integers is {max}, {update_counter} updates performed')
+
+
 # Exercise 57: Decimal to Binary - Write a program that converts a decimal (base 10) number to binary (base 2). Read the
 # decimal number from the user as an integer and then use the division algorithm shown below to perform the conversion.
 # When the algorithm completes, result contains the binary representation of the number. Display the result, along with
