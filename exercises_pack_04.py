@@ -1,3 +1,49 @@
+# Exercise 59: Coin Flip Simulation - What’s the minimum number of times you have to flip a coin before you can have
+# three consecutive flips that result in the same outcome (either all three are heads or all three are tails)? What’s
+# the maximum number of flips that might be needed? How many flips are needed on average? In this exercise we will
+# explore these questions by creating a program that simulates several series of coin flips. Create a program that uses
+# Python’s random number generator to simulate flipping a coin several times. The simulated coin should be fair, meaning
+# that the probability of heads is equal to the probability of tails. Your program should flip simulated coins until
+# either 3 consecutive heads of 3 consecutive tails occur. Display an H each time the outcome is heads, and a T each
+# time the outcome is tails, with all of the outcomes shown on the same line. Then display the number of flips needed to
+# reach 3 consecutive flips with the same outcome. When your program is run it should perform the simulation 10 times
+# and report the average number of flips needed. Sample output is shown below:
+
+# H  T  H  H  H  (5 flips)
+# T  H  T  H  H  T  T  T  (8 flips)
+# T  H  H  T  T  T  (6 flips)
+# H  T  T  T  (4 flips)
+# H  T  T  H  H  H  (6 flips)
+# H  H  T  H  H  T  T  H  H  T  H  T  T  H  H  H  (16 flips)
+# T  H  T  H  T  T  T  (7 flips)
+# T  T  T  (3 flips)
+# T  T  H  T  H  T  H  H  H  (9 flips)
+# T  H  H  H  (4 flips)
+# On average, 6.8 flips were needed for 10 cycles
+
+import random
+
+print('Coin Flip Simulation')
+sim_cycles = 10
+sim_total_flips = 0
+average_total_flips = 0
+for i in range(1, sim_cycles + 1):
+    flip_try = ''
+    flip_counter = 0
+    while ' T  T  T ' not in flip_try and ' H  H  H ' not in flip_try:
+        flip = random.randint(1, 2)
+        if flip == 1:
+            flip = ' H '
+        else:
+            flip = ' T '
+        flip_try += flip
+        flip_counter += 1
+    print(f'{flip_try} ({flip_counter} flips)')
+    sim_total_flips += flip_counter
+average_total_flips = sim_total_flips / sim_cycles
+print(f'On average, {average_total_flips} flips were needed for {sim_cycles} cycles')
+
+
 # Exercise 58: Maximum Integer - This exercise examines the process of identifying the maximum value in a collection of
 # integers. Each of the integers will be randomly selected from the numbers between 1 and 100. The collection of
 # integers may contain duplicate values, and some of the integers between 1 and 100 may not be present. Take a moment
