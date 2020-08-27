@@ -1,3 +1,22 @@
+# Exercise 60: Compute the Hypotenuse - Write a function that takes the lengths of the two shorter sides of a right
+# triangle as its parameters. Return the hypotenuse of the triangle, computed using pythagorean theorem,
+# as the function’s result. Include a main program that reads the lengths of the shorter sides of a right triangle
+# from the user, uses your function to compute the length of the hypotenuse, and displays the result.
+
+import math
+
+def hypotenuse_calc(a, b):
+    z = (a*a) + (b*b)
+    c = math.sqrt(z)
+    return c
+
+
+def main():
+    print('The Hypotenuse Calculator')
+    s1, s2 = input('Please input the shorter sides of the triangle: ').split()
+    print('The hypotenuse of the triangle is: {0:.2f}'.format(hypotenuse_calc(int(s1), int(s2))))
+
+
 # Exercise 59: Coin Flip Simulation - What’s the minimum number of times you have to flip a coin before you can have
 # three consecutive flips that result in the same outcome (either all three are heads or all three are tails)? What’s
 # the maximum number of flips that might be needed? How many flips are needed on average? In this exercise we will
