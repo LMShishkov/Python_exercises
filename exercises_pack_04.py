@@ -1,3 +1,21 @@
+# Exercise 61: Taxi Fare - In a particular jurisdiction, taxi fares consist of a base fare of $4.00, plus $0.25 for
+# every 140 meters traveled. Write a function that takes the distance traveled (in kilometers) as its only parameter
+# and returns the total fare as its only result. Write a main program that demonstrates the function.
+
+def taxi_fare(dist):
+    base_fare = 4
+    var_fare = 0.25
+    dist_m = dist * 1000
+    fare = base_fare + (dist_m/140)*var_fare
+    return fare
+
+
+def main():
+    print('Taxi Fare Calculator')
+    distance = float(input('Please input the distance traveled in kilometers: '))
+    print('The total fare for {0:.2f} kilometers travelled is {1:.2f}$'.format(distance, taxi_fare(distance)))
+
+
 # Exercise 60: Compute the Hypotenuse - Write a function that takes the lengths of the two shorter sides of a right
 # triangle as its parameters. Return the hypotenuse of the triangle, computed using pythagorean theorem,
 # as the function’s result. Include a main program that reads the lengths of the shorter sides of a right triangle
