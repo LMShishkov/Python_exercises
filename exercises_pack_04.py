@@ -1,3 +1,21 @@
+# Exercise 62: Shipping Calculator - An online retailer provides express shipping for many of its items at a rate of
+# $10.95 for the first item, and $2.95 for each subsequent item. Write a function that takes the number of items in
+# the order as its only parameter. Return the shipping charge for the order as the function’s result. Include a main
+# program that reads the number of items purchased from the user and displays the shipping charge.
+
+def shipping_calc(items):
+    first_item = 10.95
+    next_item = 2.95
+    charge = first_item + (items - 1) * next_item
+    return charge
+
+
+def main():
+    print('The Shipping Calculator')
+    your_items = int(input('Please input the number of items you would like to get the shipping charge for: '))
+    print('The shipping charge for {0} item(s) is {1:.2f}$'.format(your_items, shipping_calc(your_items)))
+
+
 # Exercise 61: Taxi Fare - In a particular jurisdiction, taxi fares consist of a base fare of $4.00, plus $0.25 for
 # every 140 meters traveled. Write a function that takes the distance traveled (in kilometers) as its only parameter
 # and returns the total fare as its only result. Write a main program that demonstrates the function.
