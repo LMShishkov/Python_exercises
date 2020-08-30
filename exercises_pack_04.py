@@ -1,3 +1,17 @@
+# Exercise 63: Median of Three Values - Write a function that takes three numbers as parameters, and returns the
+# median value of those parameters as its result. Include a main program that reads three values from the user and
+# displays their median.
+
+def median_val(a, b, c):
+    return a + b + c - min(a, b, c) - max(a, b, c)
+
+
+def main():
+    print('Median of three values')
+    v1, v2, v3 = input('Please input three values to confirm their median: ').split()
+    print('The median of {0}, {1} and {2} is {3}'.format(v1, v2, v3, median_val(float(v1), float(v2), float(v3))))
+
+
 # Exercise 62: Shipping Calculator - An online retailer provides express shipping for many of its items at a rate of
 # $10.95 for the first item, and $2.95 for each subsequent item. Write a function that takes the number of items in
 # the order as its only parameter. Return the shipping charge for the order as the function’s result. Include a main
