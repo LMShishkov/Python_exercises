@@ -1,3 +1,48 @@
+# Exercise 64: Convert an Integer to its Ordinal Number - Words like first, second and third are referred to as ordinal
+# numbers. In this exercise, you will write a function that takes an integer as its only parameter and returns a string
+# containing the appropriate English ordinal number as its only result. Your function must handle the integers between
+# 1 and 12 (inclusive). It should return an empty string if a value outside of this range is provided as a parameter.
+# Include a main program that demonstrates your function by displaying each integer from 1 to 12 and its ordinal number.
+
+def ord_converter(a):
+    if a == 1:
+        ord = 'first'
+    elif a == 2:
+        ord = 'second'
+    elif a == 3:
+        ord = 'third'
+    elif a == 4:
+        ord = 'fourth'
+    elif a == 5:
+        ord = 'fifth'
+    elif a == 6:
+        ord = 'sixth'
+    elif a == 7:
+        ord = 'seventh'
+    elif a == 8:
+        ord = 'eight'
+    elif a == 9:
+        ord = 'ninth'
+    elif a == 10:
+        ord = 'tenth'
+    elif a == 11:
+        ord = 'eleventh'
+    elif a == 12:
+        ord = 'twelfth'
+    else:
+        ord = ''
+    return ord
+
+
+def main():
+    print('The Ordinal Number converter')
+    num = int(input('Please input an integer from 1 - 12: '))
+    if num > 12:
+        print('The ordinal is not supported!')
+    else:
+        print('The ordinal for {0} is {1}'.format(num, ord_converter(num)))
+
+
 # Exercise 63: Median of Three Values - Write a function that takes three numbers as parameters, and returns the
 # median value of those parameters as its result. Include a main program that reads three values from the user and
 # displays their median.
