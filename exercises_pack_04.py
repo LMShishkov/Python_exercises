@@ -1,3 +1,72 @@
+# Exercise 65:  The Twelve Days of Christmas - The Twelve Days of Christmas is a repetitive song (lyrics available
+# online) that describes an increasingly long list of gifts sent to one’s true love on each of 12 days. A single gift is
+# sent on the first day. A new gift is added to the collection on each additional day, and then the complete collection
+# is sent. Your task is to write a program that displays the complete lyrics for The Twelve Days of Christmas. Write a
+# function that takes the verse number as its only parameter and displays the specified verse of the song. Then call
+# that function 12 times with integers that increase from 1 to 12. Each item that is sent to the recipient in the song
+# should only appear once in your program, with the possible exception of the partridge. It may appear twice if that
+# helps you handle the difference between “A partridge in a pear tree” in the first verse and “And a partridge in a pear
+# tree” in the subsequent verses. Import your solution to Exercise 85 to help you complete this exercise.
+
+def xmas_song_lyrics(a):
+    verse = ''
+    base = 'On the {0} day of Christmas\nmy true love sent to me:'
+    end = '\nAnd a partridge in a pear tree.'
+    ver1 = '\nA partridge in a pear tree'
+    ver2 = '\nTwo turtle doves,' + end
+    ver3 = '\nThree French hens,' + ver2
+    ver4 = '\nFour calling birds,' + ver3
+    ver5 = '\nFive gold rings,' + ver4
+    ver6 = '\nSix geese a laying,' + ver5
+    ver7 = '\nSeven swans a swimming,' + ver6
+    ver8 = '\nEight maids a milking,' + ver7
+    ver9 = '\nNine ladies dancing,' + ver8
+    ver10 = '\nTen lords a leaping,' + ver9
+    ver11 = '\nEleven pipers piping,' + ver10
+    ver12 = '\n12 drummers drumming,' + ver11
+    if a == 1:
+        ord = 'first'
+        verse = base.format(ord) + ver1
+    elif a == 2:
+        ord = 'second'
+        verse = base.format(ord) + ver2
+    elif a == 3:
+        ord = 'third'
+        verse = base.format(ord) + ver3
+    elif a == 4:
+        ord = 'fourth'
+        verse = base.format(ord) + ver4
+    elif a == 5:
+        ord = 'fifth'
+        verse = base.format(ord) + ver5
+    elif a == 6:
+        ord = 'sixth'
+        verse = base.format(ord) + ver6
+    elif a == 7:
+        ord = 'seventh'
+        verse = base.format(ord) + ver7
+    elif a == 8:
+        ord = 'eight'
+        verse = base.format(ord) + ver8
+    elif a == 9:
+        ord = 'ninth'
+        verse = base.format(ord) + ver9
+    elif a == 10:
+        ord = 'tenth'
+        verse = base.format(ord) + ver10
+    elif a == 11:
+        ord = 'eleventh'
+        verse = base.format(ord) + ver11
+    elif a == 12:
+        ord = 'twelfth'
+        verse = base.format(ord) + ver12
+    return verse + '\n'
+
+def main(b):
+    for i in range(1, b+1):
+        print(xmas_song_lyrics(i))
+
+
 # Exercise 64: Convert an Integer to its Ordinal Number - Words like first, second and third are referred to as ordinal
 # numbers. In this exercise, you will write a function that takes an integer as its only parameter and returns a string
 # containing the appropriate English ordinal number as its only result. Your function must handle the integers between
