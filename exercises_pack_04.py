@@ -1,3 +1,31 @@
+# Exercise 67: Capitalize it - Many people do not use capital letters correctly, especially when typing on small devices
+# like smart phones. In this exercise, you will write a function that capitalizes the appropriate characters in a
+# string. A lowercase “i” should be replaced with an uppercase “I” if it is both preceded and followed by a space. The
+# first character in the string should also be capitalized, as well as the first non-space character after a “.”, “!” or
+# “?”. For example, if the function is provided with the string “what time do i have to be there? what’s the address?”
+# then it should return the string “What time do I have to be there? What’s the address?”. Include a main program that
+# reads a string from the user, capitalizes it using your function, and displays the result.
+
+def cap_string(string):
+    found = True
+    string = string.replace(' i ', ' I ')
+    new_string = ''
+    for ch in string:
+        if ch == '.' or ch == '?' or ch == '!':
+            found = True
+        if ch.isalpha() and found:
+            found = False
+            new_string += ch.upper()
+        else:
+            new_string += ch
+    return new_string
+
+
+def main():
+    string = input('Please input a string to capitalize it: ')
+    print('Result:', cap_string(string))
+
+
 # Exercise 66:  Is it a Valid Triangle? - If you have 3 straws, possibly of differing lengths, it may or may not be
 # possible to lay them down so that they form a triangle when their ends are touching. For example, if all of the straws
 # have a length of 6 inches. then one can easily construct an equilateral triangle using them. However, if one straw is
