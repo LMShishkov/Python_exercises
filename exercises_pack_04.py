@@ -1,3 +1,25 @@
+# Exercise 68: Does a String Represent an Integer? - In this exercise you will write a function named isInteger that
+# determines whether or not the characters in a string represent a valid integer. When determining if a string
+# represents an integer you should ignore any leading or trailing white space. Once this white space is ignored, a
+# string represents an integer if its length is at least 1 and it only contains digits, or if its first character is
+# either + or - and the first character is followed by one or more characters, all of which are digits. Write a main
+# program that reads a string from the user and reports whether or not it represents an integer.
+
+def isinteger(s):
+    s = s.strip(' ')
+    s_isinteger = False
+    if (s[0] == '-' or s[0] == '+') and s[1:].isnumeric():
+        s_isinteger = True
+    elif s.isnumeric():
+        s_isinteger = True
+    return s_isinteger
+
+
+def main():
+    string = input('Please input a string to check if it is a valid integer: ')
+    print('Answer:', isinteger(string))
+
+
 # Exercise 67: Capitalize it - Many people do not use capital letters correctly, especially when typing on small devices
 # like smart phones. In this exercise, you will write a function that capitalizes the appropriate characters in a
 # string. A lowercase “i” should be replaced with an uppercase “I” if it is both preceded and followed by a space. The
