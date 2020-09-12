@@ -1,4 +1,35 @@
-# Exercise 68: Does a String Represent an Integer? - In this exercise you will write a function named isInteger that
+# Exercise 69: Operator Precedence - Write a function named precedence that returns an integer representing the
+# precedence of a mathematical operator. A string containing the operator will be passed to the function as its only
+# parameter. Your function should return 1 for + and -, 2 for * and /, and 3 for ˆ. If the string passed to the function
+# is not one of these operators then the function should return -1. Include a main program that reads an operator from
+# the user and either displays the operator’s precedence or an error message indicating that the input was not an
+# operator. Your main program should only run when the file containing your solution has not been imported into another
+# program. Note: In this exercise, along with others that appear later in the pack, we will use ˆ to represent
+# exponentiation. Using ˆ instead of Python’s choice of ** will make these exercises easier because an operator will
+# always be a single character.
+
+def precedence(s):
+    s = s.strip(' ')
+    if s == '-' or s == '+':
+        s_return = '(1)'
+    elif s == '*' or s == '/':
+        s_return = '(2)'
+    elif s == '^':
+        s_return = '(3)'
+    else:
+        s_return = '(-1)'
+    return s_return
+
+
+def main():
+    string = input("Please enter a mathematical operator to check it's mathematical precedence: ")
+    if precedence(string) == '(-1)':
+        print('The string does not contain a valid mathematical operator')
+    else:
+        print(f'The mathematical operator has a precedence of: {precedence(string)}')
+
+
+# : Does a String Represent an Integer? - In this exercise you will write a function named isInteger that
 # determines whether or not the characters in a string represent a valid integer. When determining if a string
 # represents an integer you should ignore any leading or trailing white space. Once this white space is ignored, a
 # string represents an integer if its length is at least 1 and it only contains digits, or if its first character is
